@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:08.995
+Dieses Video zeigt an einem zweiten Beispiel, wie man eine betriebswirtschaftliche Fragestellung in eine Matrixoperation übersetzt.
+
+2
+00:00:09.595 --> 00:00:20.992
+Im Einführungsvideo war die Matrixoperation vorgegeben. Hier gehen wir den umgekehrten Weg: Wir überlegen erst inhaltlich und stellen dann die passende Operation auf.
+
+3
+00:00:22.792 --> 00:00:25.253
+Die Lernziele des Videos sind:
+
+4
+00:00:25.703 --> 00:00:31.168
+Erstens: eine betriebswirtschaftliche Fragestellung in eine Matrixoperation übersetzen.
+
+5
+00:00:31.568 --> 00:00:37.215
+Zweitens: erkennen, welche Größen in die Matrix und welche in den Vektor gehören.
+
+6
+00:00:37.615 --> 00:00:43.757
+Und drittens: das Ergebnis eines Matrix-Vektor-Produkts inhaltlich interpretieren.
+
+7
+00:00:46.357 --> 00:00:56.627
+Stellen wir uns eine kleine Eismanufaktur vor, die drei Sorten herstellt: Softeis, Eisbecher und Sorbet.
+
+8
+00:00:57.177 --> 00:01:03.694
+Produziert wird in Chargen zu je fünf Litern.
+
+9
+00:01:05.294 --> 00:01:09.154
+Dafür werden drei Rohstoffe gebraucht: Milch in Litern, Früchte in Kilogramm und Schokolade in Tafeln.
+
+10
+00:01:11.154 --> 00:01:20.994
+Wie viel von jedem Rohstoff eine Charge braucht, steht in dieser Tabelle: in den Zeilen die Rohstoffe, in den Spalten die Produkte.
+
+11
+00:01:21.544 --> 00:01:28.144
+Eine Charge Softeis braucht vier Liter Milch, ein Kilogramm Früchte und zwei Tafeln Schokolade.
+
+12
+00:01:28.644 --> 00:01:34.580
+Für eine Charge Eisbecher sind es fünf Liter Milch, zwei Kilogramm Früchte und drei Tafeln Schokolade.
+
+13
+00:01:35.080 --> 00:01:39.956
+Das Sorbet dagegen kommt ohne Milch und ohne Schokolade aus. Es braucht nur sechs Kilogramm Früchte.
+
+14
+00:01:40.456 --> 00:01:43.696
+Die beiden Nullen zeigen also, dass diese Rohstoffe in das Sorbet gar nicht eingehen.
+
+15
+00:01:45.446 --> 00:01:50.086
+Für die kommende Woche ist folgender Produktionsplan vorgesehen: zehn Chargen Softeis, sechs Chargen Eisbecher und vier Chargen Sorbet.
+
+16
+00:01:50.636 --> 00:01:53.722
+Wie viel wird damit von jedem Rohstoff insgesamt benötigt?
+
+17
+00:01:56.372 --> 00:02:05.688
+Rechnen wir das zunächst ganz elementar aus: je Rohstoff die Bedarfsmenge pro Charge mal die Produktionsmenge, summiert über die drei Sorten.
+
+18
+00:02:06.238 --> 00:02:09.818
+Für die Milch: vier Liter mal zehn Chargen Softeis.
+
+19
+00:02:10.218 --> 00:02:13.245
+Dazu fünf Liter mal sechs Chargen Eisbecher.
+
+20
+00:02:13.645 --> 00:02:16.845
+Das Sorbet braucht keine Milch, also null mal vier.
+
+21
+00:02:17.245 --> 00:02:22.285
+Zusammen sind das vierzig plus dreißig plus null, also siebzig Liter Milch.
+
+22
+00:02:22.885 --> 00:02:28.905
+Für die Früchte ergibt sich: ein Kilogramm mal zehn, plus zwei mal sechs, plus sechs mal vier. Das sind sechsundvierzig Kilogramm.
+
+23
+00:02:29.455 --> 00:02:39.147
+Und für die Schokolade: zwei mal zehn, plus drei mal sechs, plus null mal vier. Das sind achtunddreißig Tafeln.
+
+24
+00:02:41.797 --> 00:02:50.121
+Wie lässt sich daraus nun eine Matrixoperation machen? Dazu schauen wir uns die drei Rechenzeilen genauer an.
+
+25
+00:02:50.671 --> 00:02:59.073
+Die Produktionsmengen zehn, sechs und vier tauchen in jeder Zeile wieder auf, immer dieselben Faktoren an derselben Stelle.
+
+26
+00:02:59.623 --> 00:03:07.138
+Die Bedarfsmengen dagegen unterscheiden sich: je Produkt und je Rohstoff steht dort eine andere Zahl.
+
+27
+00:03:08.888 --> 00:03:15.022
+Die Bedarfsmengen hängen also von zwei Kennzeichen ab, vom Rohstoff und vom Produkt. Solche Größen gehören in eine Matrix.
+
+28
+00:03:15.572 --> 00:03:21.814
+Die Produktionsmengen hängen nur von einem Kennzeichen ab, vom Produkt. Sie bilden einen Vektor.
+
+29
+00:03:23.814 --> 00:03:28.212
+Der Spaltenvektor wird von rechts an die Matrix multipliziert.
+
+30
+00:03:28.712 --> 00:03:37.748
+Damit die Bedeutungen zusammenpassen, müssen in den Spalten der Matrix die Produkte stehen, also dieselbe Bedeutung wie die Zeilen des Vektors.
+
+31
+00:03:38.298 --> 00:03:44.234
+Die Zeilen der Matrix stehen dann für die Rohstoffe, und damit auch die Zeilen des Ergebnisses.
+
+32
+00:03:44.784 --> 00:03:49.764
+Die Bedarfsmatrix nennen wir A, den Produktionsplan x.
+
+33
+00:03:52.414 --> 00:03:54.884
+Nun berechnen wir das Produkt A mal x.
+
+34
+00:03:55.434 --> 00:04:01.234
+Wie im Einführungsvideo wird der Spaltenvektor gekippt und über die erste Zeile der Matrix gelegt.
+
+35
+00:04:01.784 --> 00:04:10.360
+Die Zahlen, die übereinanderstehen, werden malgenommen und anschließend addiert: vierzig plus dreißig plus null ergibt siebzig.
+
+36
+00:04:10.860 --> 00:04:18.110
+Siebzig Liter Milch, das ist der erste Eintrag des Ergebnisses.
+
+37
+00:04:18.710 --> 00:04:24.670
+Nun wandert der gekippte Vektor eine Zeile nach unten. Für die Früchte ergibt sich sechsundvierzig.
+
+38
+00:04:25.220 --> 00:04:29.380
+Und in der dritten Zeile für die Schokolade achtunddreißig.
+
+39
+00:04:29.980 --> 00:04:35.863
+Das Ergebnis ist der Rohstoffbedarf für den ganzen Produktionsplan: siebzig Liter Milch, sechsundvierzig Kilogramm Früchte und achtunddreißig Tafeln Schokolade.
+
+40
+00:04:38.563 --> 00:04:44.012
+Vergleichen wir die erste Zeile noch einmal mit unserer anfänglichen Überlegung.
+
+41
+00:04:44.512 --> 00:04:52.181
+Es ist genau dieselbe Rechnung. Das Matrix-Vektor-Produkt fasst nur zusammen, was wir vorher einzeln aufgeschrieben haben.
+
+42
+00:04:54.181 --> 00:04:57.619
+Kurz noch die beiden Prüfungen aus dem Einführungsvideo.
+
+43
+00:04:58.069 --> 00:05:09.557
+Die Dimensionen: A ist drei kreuz drei, x ist drei kreuz eins. Die beiden inneren Zahlen stimmen überein, das Ergebnis ist drei kreuz eins.
+
+44
+00:05:10.057 --> 00:05:21.984
+Und die Bedeutungen: Die Spalten von A und die Zeilen von x sind jeweils die Produkte, die Zeilen von A und die Zeilen des Ergebnisses sind die Rohstoffe.
+
+45
+00:05:24.684 --> 00:05:33.635
+Was von zwei Kennzeichen abhängt, hier vom Rohstoff und vom Produkt, gehört in die Matrix. Die wiederkehrenden Faktoren bilden den Vektor.
+
+46
+00:05:34.185 --> 00:05:41.061
+Das Matrix-Vektor-Produkt A mal x liefert dann den Rohstoffbedarf eines ganzen Produktionsplans in einem Schritt.
+
+47
+00:05:41.611 --> 00:05:46.101
+Der nächste Schritt wäre, mehrere Produktionspläne gleichzeitig zu betrachten. Das führt zum Produkt zweier Matrizen.

@@ -1,0 +1,274 @@
+{
+  "slug": "produktionsplanung",
+  "title": "Matrixrechnung in der BWL – Produktionsplanung",
+  "author": "Prof. Dr. Sebastian Schlütter | Hochschule Mainz",
+  "video_filename": "20260915_2119_Matrixrechnung_BWL_Produktionsplanung.mp4",
+  "duration": 351.101,
+  "chapters": [
+    {
+      "title": "Einführung und Lernziele",
+      "start": 0.0
+    },
+    {
+      "title": "Eismanufaktur und Bedarf je Charge",
+      "start": 46.357
+    },
+    {
+      "title": "Elementare Rechnung",
+      "start": 116.372
+    },
+    {
+      "title": "Von der Rechnung zur Matrix",
+      "start": 161.797
+    },
+    {
+      "title": "Matrix-Vektor-Produkt",
+      "start": 232.414
+    },
+    {
+      "title": "Vergleich und Kurzprüfung",
+      "start": 278.563
+    },
+    {
+      "title": "Fazit",
+      "start": 324.684
+    }
+  ],
+  "subtitles": [
+    {
+      "start": 0.7,
+      "end": 8.995,
+      "text": "Dieses Video zeigt an einem zweiten Beispiel, wie man eine betriebswirtschaftliche Fragestellung in eine Matrixoperation übersetzt."
+    },
+    {
+      "start": 9.595,
+      "end": 20.992,
+      "text": "Im Einführungsvideo war die Matrixoperation vorgegeben. Hier gehen wir den umgekehrten Weg: Wir überlegen erst inhaltlich und stellen dann die passende Operation auf."
+    },
+    {
+      "start": 22.792,
+      "end": 25.253,
+      "text": "Die Lernziele des Videos sind:"
+    },
+    {
+      "start": 25.703,
+      "end": 31.168,
+      "text": "Erstens: eine betriebswirtschaftliche Fragestellung in eine Matrixoperation übersetzen."
+    },
+    {
+      "start": 31.568,
+      "end": 37.215,
+      "text": "Zweitens: erkennen, welche Größen in die Matrix und welche in den Vektor gehören."
+    },
+    {
+      "start": 37.615,
+      "end": 43.757,
+      "text": "Und drittens: das Ergebnis eines Matrix-Vektor-Produkts inhaltlich interpretieren."
+    },
+    {
+      "start": 46.357,
+      "end": 56.627,
+      "text": "Stellen wir uns eine kleine Eismanufaktur vor, die drei Sorten herstellt: Softeis, Eisbecher und Sorbet."
+    },
+    {
+      "start": 57.177,
+      "end": 63.694,
+      "text": "Produziert wird in Chargen zu je fünf Litern."
+    },
+    {
+      "start": 65.294,
+      "end": 69.154,
+      "text": "Dafür werden drei Rohstoffe gebraucht: Milch in Litern, Früchte in Kilogramm und Schokolade in Tafeln."
+    },
+    {
+      "start": 71.154,
+      "end": 80.994,
+      "text": "Wie viel von jedem Rohstoff eine Charge braucht, steht in dieser Tabelle: in den Zeilen die Rohstoffe, in den Spalten die Produkte."
+    },
+    {
+      "start": 81.544,
+      "end": 88.144,
+      "text": "Eine Charge Softeis braucht vier Liter Milch, ein Kilogramm Früchte und zwei Tafeln Schokolade."
+    },
+    {
+      "start": 88.644,
+      "end": 94.58,
+      "text": "Für eine Charge Eisbecher sind es fünf Liter Milch, zwei Kilogramm Früchte und drei Tafeln Schokolade."
+    },
+    {
+      "start": 95.08,
+      "end": 99.956,
+      "text": "Das Sorbet dagegen kommt ohne Milch und ohne Schokolade aus. Es braucht nur sechs Kilogramm Früchte."
+    },
+    {
+      "start": 100.456,
+      "end": 103.696,
+      "text": "Die beiden Nullen zeigen also, dass diese Rohstoffe in das Sorbet gar nicht eingehen."
+    },
+    {
+      "start": 105.446,
+      "end": 110.086,
+      "text": "Für die kommende Woche ist folgender Produktionsplan vorgesehen: zehn Chargen Softeis, sechs Chargen Eisbecher und vier Chargen Sorbet."
+    },
+    {
+      "start": 110.636,
+      "end": 113.722,
+      "text": "Wie viel wird damit von jedem Rohstoff insgesamt benötigt?"
+    },
+    {
+      "start": 116.372,
+      "end": 125.688,
+      "text": "Rechnen wir das zunächst ganz elementar aus: je Rohstoff die Bedarfsmenge pro Charge mal die Produktionsmenge, summiert über die drei Sorten."
+    },
+    {
+      "start": 126.238,
+      "end": 129.818,
+      "text": "Für die Milch: vier Liter mal zehn Chargen Softeis."
+    },
+    {
+      "start": 130.218,
+      "end": 133.245,
+      "text": "Dazu fünf Liter mal sechs Chargen Eisbecher."
+    },
+    {
+      "start": 133.645,
+      "end": 136.845,
+      "text": "Das Sorbet braucht keine Milch, also null mal vier."
+    },
+    {
+      "start": 137.245,
+      "end": 142.285,
+      "text": "Zusammen sind das vierzig plus dreißig plus null, also siebzig Liter Milch."
+    },
+    {
+      "start": 142.885,
+      "end": 148.905,
+      "text": "Für die Früchte ergibt sich: ein Kilogramm mal zehn, plus zwei mal sechs, plus sechs mal vier. Das sind sechsundvierzig Kilogramm."
+    },
+    {
+      "start": 149.455,
+      "end": 159.147,
+      "text": "Und für die Schokolade: zwei mal zehn, plus drei mal sechs, plus null mal vier. Das sind achtunddreißig Tafeln."
+    },
+    {
+      "start": 161.797,
+      "end": 170.121,
+      "text": "Wie lässt sich daraus nun eine Matrixoperation machen? Dazu schauen wir uns die drei Rechenzeilen genauer an."
+    },
+    {
+      "start": 170.671,
+      "end": 179.073,
+      "text": "Die Produktionsmengen zehn, sechs und vier tauchen in jeder Zeile wieder auf, immer dieselben Faktoren an derselben Stelle."
+    },
+    {
+      "start": 179.623,
+      "end": 187.138,
+      "text": "Die Bedarfsmengen dagegen unterscheiden sich: je Produkt und je Rohstoff steht dort eine andere Zahl."
+    },
+    {
+      "start": 188.888,
+      "end": 195.022,
+      "text": "Die Bedarfsmengen hängen also von zwei Kennzeichen ab, vom Rohstoff und vom Produkt. Solche Größen gehören in eine Matrix."
+    },
+    {
+      "start": 195.572,
+      "end": 201.814,
+      "text": "Die Produktionsmengen hängen nur von einem Kennzeichen ab, vom Produkt. Sie bilden einen Vektor."
+    },
+    {
+      "start": 203.814,
+      "end": 208.212,
+      "text": "Der Spaltenvektor wird von rechts an die Matrix multipliziert."
+    },
+    {
+      "start": 208.712,
+      "end": 217.748,
+      "text": "Damit die Bedeutungen zusammenpassen, müssen in den Spalten der Matrix die Produkte stehen, also dieselbe Bedeutung wie die Zeilen des Vektors."
+    },
+    {
+      "start": 218.298,
+      "end": 224.234,
+      "text": "Die Zeilen der Matrix stehen dann für die Rohstoffe, und damit auch die Zeilen des Ergebnisses."
+    },
+    {
+      "start": 224.784,
+      "end": 229.764,
+      "text": "Die Bedarfsmatrix nennen wir A, den Produktionsplan x."
+    },
+    {
+      "start": 232.414,
+      "end": 234.884,
+      "text": "Nun berechnen wir das Produkt A mal x."
+    },
+    {
+      "start": 235.434,
+      "end": 241.234,
+      "text": "Wie im Einführungsvideo wird der Spaltenvektor gekippt und über die erste Zeile der Matrix gelegt."
+    },
+    {
+      "start": 241.784,
+      "end": 250.36,
+      "text": "Die Zahlen, die übereinanderstehen, werden malgenommen und anschließend addiert: vierzig plus dreißig plus null ergibt siebzig."
+    },
+    {
+      "start": 250.86,
+      "end": 258.11,
+      "text": "Siebzig Liter Milch, das ist der erste Eintrag des Ergebnisses."
+    },
+    {
+      "start": 258.71,
+      "end": 264.67,
+      "text": "Nun wandert der gekippte Vektor eine Zeile nach unten. Für die Früchte ergibt sich sechsundvierzig."
+    },
+    {
+      "start": 265.22,
+      "end": 269.38,
+      "text": "Und in der dritten Zeile für die Schokolade achtunddreißig."
+    },
+    {
+      "start": 269.98,
+      "end": 275.863,
+      "text": "Das Ergebnis ist der Rohstoffbedarf für den ganzen Produktionsplan: siebzig Liter Milch, sechsundvierzig Kilogramm Früchte und achtunddreißig Tafeln Schokolade."
+    },
+    {
+      "start": 278.563,
+      "end": 284.012,
+      "text": "Vergleichen wir die erste Zeile noch einmal mit unserer anfänglichen Überlegung."
+    },
+    {
+      "start": 284.512,
+      "end": 292.181,
+      "text": "Es ist genau dieselbe Rechnung. Das Matrix-Vektor-Produkt fasst nur zusammen, was wir vorher einzeln aufgeschrieben haben."
+    },
+    {
+      "start": 294.181,
+      "end": 297.619,
+      "text": "Kurz noch die beiden Prüfungen aus dem Einführungsvideo."
+    },
+    {
+      "start": 298.069,
+      "end": 309.557,
+      "text": "Die Dimensionen: A ist drei kreuz drei, x ist drei kreuz eins. Die beiden inneren Zahlen stimmen überein, das Ergebnis ist drei kreuz eins."
+    },
+    {
+      "start": 310.057,
+      "end": 321.984,
+      "text": "Und die Bedeutungen: Die Spalten von A und die Zeilen von x sind jeweils die Produkte, die Zeilen von A und die Zeilen des Ergebnisses sind die Rohstoffe."
+    },
+    {
+      "start": 324.684,
+      "end": 333.635,
+      "text": "Was von zwei Kennzeichen abhängt, hier vom Rohstoff und vom Produkt, gehört in die Matrix. Die wiederkehrenden Faktoren bilden den Vektor."
+    },
+    {
+      "start": 334.185,
+      "end": 341.061,
+      "text": "Das Matrix-Vektor-Produkt A mal x liefert dann den Rohstoffbedarf eines ganzen Produktionsplans in einem Schritt."
+    },
+    {
+      "start": 341.611,
+      "end": 346.101,
+      "text": "Der nächste Schritt wäre, mehrere Produktionspläne gleichzeitig zu betrachten. Das führt zum Produkt zweier Matrizen."
+    }
+  ]
+}
