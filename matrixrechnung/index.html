@@ -3,35 +3,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matrixrechnung in der BWL</title>
+  <title>Matrixrechnung in der BWL – Umsatz je Kundin und Kunde</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #20242A;
-      background: #F7F8FA;
-    }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    video {
-      width: 100%;
-      background: #000;
-      border-radius: 8px;
-    }
+    * { box-sizing: border-box; }
+    body { margin:0; padding:24px; background:#F7F8FA; color:#20242A; font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; }
+    main { max-width:1120px; margin:0 auto; }
+    h1 { font-size:clamp(1.35rem,2.4vw,2rem); margin:0 0 6px; }
+    .author { color:#68707C; margin:0 0 18px; }
+    .player { background:white; border:1px solid #D8DDE5; border-radius:12px; padding:14px; }
+    video { width:100%; display:block; background:#000; border-radius:8px; }
+    h2 { font-size:1.05rem; margin:20px 0 10px; }
+    .chapters { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:8px; }
+    .chapter { border:1px solid #D8DDE5; background:#fff; color:#20242A; border-radius:8px; padding:10px 12px; text-align:left; cursor:pointer; font:inherit; display:flex; gap:10px; align-items:baseline; }
+    .chapter:hover,.chapter.active { border-color:#2E6F9E; background:#F0F6FA; }
+    .time { color:#2E6F9E; font-variant-numeric:tabular-nums; min-width:3.3rem; }
   </style>
 </head>
-<body>
-  <h1>Einführung in die Matrixrechnung</h1>
-
-  <video controls preload="metadata">
-    <source
-      src="https://seafile.rlp.net/seafhttp/f/1ab0f9aa3abd47e1932d/?op=view"
-      type="video/mp4">
-    Ihr Browser unterstützt die Videowiedergabe nicht.
-  </video>
-</body>
-</html>
+<body><main>
+  <h1>Matrixrechnung in der BWL – Umsatz je Kundin und Kunde</h1>
+  <p class="author">Prof. Dr. Sebastian Schlütter | Hochschule Mainz</p>
+  <section class="player">
+    <video id="video" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/5ab12240638f4f498110/?op=view" type="video/mp4">
+      <track kind="chapters" src="chapters.vtt" srclang="de" label="Kapitel">
+      <track kind="subtitles" src="subtitles_de.vtt" srclang="de" label="Deutsch">
+      Ihr Browser unterstützt die Videowiedergabe nicht.
+    </video>
+    <h2>Kapitel</h2><div id="chapters" class="chapters"></div>
+  </section>
+</main>
+<script>
+const chapters = [{"title": "Einführung und Lernziele", "start": 0.0}, {"title": "Ausgangssituation und Daten", "start": 31.817}, {"title": "Elementare Umsatzberechnung", "start": 96.176}, {"title": "Matrizen und Vektoren", "start": 153.389}, {"title": "Matrix-Vektor-Produkt", "start": 206.881}, {"title": "Dimensionen prüfen", "start": 295.1}, {"title": "Bedeutung und Vorgehen", "start": 353.969}, {"title": "Nutzen bei großen Dimensionen", "start": 415.614}, {"title": "Fazit", "start": 463.638}];
+const video = document.getElementById('video');
+const box = document.getElementById('chapters');
+const buttons = [];
+function fmt(sec){sec=Math.round(sec);const m=Math.floor(sec/60),s=sec%60;return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}
+chapters.forEach((c,i)=>{const b=document.createElement('button');b.className='chapter';b.innerHTML='<span class="time">'+fmt(c.start)+'</span><span>'+c.title+'</span>';b.addEventListener('click',()=>{video.currentTime=c.start;video.play();});box.appendChild(b);buttons.push(b);});
+video.addEventListener('timeupdate',()=>{let active=0;for(let i=0;i<chapters.length;i++)if(video.currentTime>=chapters[i].start)active=i;buttons.forEach((b,i)=>b.classList.toggle('active',i===active));});
+</script></body></html>
