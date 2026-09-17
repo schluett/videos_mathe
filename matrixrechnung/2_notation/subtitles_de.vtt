@@ -1,0 +1,197 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:06.832
+Im ersten Video dieser Reihe haben wir gesehen, wofür man die Matrixrechnung in der BWL braucht.
+
+2
+00:00:07.532 --> 00:00:18.268
+In diesem Video geht es um die Schreibweise: Wie spricht man einzelne Einträge einer Matrix an, und wie schreibt man das Matrix-Vektor-Produkt formal auf?
+
+3
+00:00:20.068 --> 00:00:22.200
+Die Lernziele des Videos sind:
+
+4
+00:00:22.650 --> 00:00:25.930
+Erstens: Einträge einer Matrix auslesen.
+
+5
+00:00:26.330 --> 00:00:29.913
+Zweitens: Einträge eines Vektors auslesen.
+
+6
+00:00:30.313 --> 00:00:35.946
+Und drittens: das Matrix-Vektor-Produkt mit dem Summenzeichen formal aufschreiben.
+
+7
+00:00:38.546 --> 00:00:41.697
+Wir schauen uns noch einmal das Café-Beispiel an.
+
+8
+00:00:42.247 --> 00:00:49.926
+In den Zeilen stehen Anna, Ben, Clara und David, in den Spalten Kaffee, Kuchen und Saft.
+
+9
+00:00:51.576 --> 00:00:58.107
+Wie schon im ersten Video bezeichnet ein Großbuchstabe die ganze Matrix. Unsere Matrix heißt A.
+
+10
+00:00:58.657 --> 00:01:05.698
+Um einen einzelnen Wert in der Matrix anzusprechen, nutzt man den Kleinbuchstaben desselben Namens.
+
+11
+00:01:06.198 --> 00:01:11.399
+An diesen werden unten rechts, man sagt im Index, zwei Zahlen geschrieben.
+
+12
+00:01:11.899 --> 00:01:15.825
+Allgemein üblich ist die Schreibweise a_ij.
+
+13
+00:01:16.375 --> 00:01:21.121
+Dabei steht i, also der erste Index, immer für die Zeile.
+
+14
+00:01:21.621 --> 00:01:25.585
+Und j, der zweite Index, immer für die Spalte.
+
+15
+00:01:26.135 --> 00:01:31.402
+Man kann sich das wie eine Platzangabe im Kino merken: erst die Reihe, dann der Platz.
+
+16
+00:01:33.102 --> 00:01:40.886
+Stehen konkrete Zahlen im Index, setzt man zur besseren Lesbarkeit ein Komma und schreibt zum Beispiel a_2,3.
+
+17
+00:01:41.386 --> 00:01:46.389
+Bei allgemeinen Indizes schreibt man dagegen kurz a_ij.
+
+18
+00:01:49.039 --> 00:01:52.577
+Üben wir das Ablesen an zwei Beispielen.
+
+19
+00:01:53.077 --> 00:01:56.451
+Welchen Wert hat das Element a_2,3?
+
+20
+00:01:59.201 --> 00:02:08.392
+Der erste Index ist eine Zwei, wir schauen also in die zweite Zeile. Der zweite Index ist eine Drei, also in die dritte Spalte.
+
+21
+00:02:08.892 --> 00:02:15.786
+Dort steht eine Drei. a_2,3 gleich drei bedeutet also: Ben hat drei Säfte gekauft.
+
+22
+00:02:17.636 --> 00:02:21.368
+Und welchen Wert hat a_4,2?
+
+23
+00:02:24.118 --> 00:02:30.859
+Vierte Zeile, zweite Spalte: dort steht eine Eins. David hat ein Stück Kuchen gekauft.
+
+24
+00:02:32.609 --> 00:02:39.091
+Die beiden Indizes dürfen nur so groß werden, wie die Matrix tatsächlich Zeilen und Spalten hat.
+
+25
+00:02:39.591 --> 00:02:49.694
+Unsere Matrix hat die Dimension 4 x 3. Also kann i die Werte eins bis vier annehmen und j die Werte eins bis drei.
+
+26
+00:02:50.194 --> 00:02:55.754
+Ein Element a_5,1 gibt es hier nicht, denn die Matrix hat keine fünfte Zeile.
+
+27
+00:02:58.404 --> 00:03:01.874
+Dasselbe Prinzip der Indizierung gilt auch für Vektoren. Aus dem Beispiel kennen wir bereits den Preisvektor p.
+
+28
+00:03:02.424 --> 00:03:13.096
+Bei Vektoren verwendet man üblicherweise nur einen Index. p_j bezeichnet den j-ten Eintrag des Vektors p.
+
+29
+00:03:13.646 --> 00:03:20.457
+Da ein Vektor ohnehin schon mit einem Kleinbuchstaben bezeichnet wird, erkennt man den einzelnen Eintrag allein am Index.
+
+30
+00:03:21.057 --> 00:03:24.037
+p_1 gleich drei ist der Preis für einen Kaffee.
+
+31
+00:03:24.487 --> 00:03:27.407
+p_2 gleich fünf ist der Preis für ein Stück Kuchen.
+
+32
+00:03:27.857 --> 00:03:30.815
+Und p_3 gleich zwei ist der Preis für einen Saft.
+
+33
+00:03:33.465 --> 00:03:39.847
+Nun zum dritten Lernziel: der formalen Notation des Produkts aus einer Matrix und einem Vektor.
+
+34
+00:03:40.397 --> 00:03:46.929
+Dafür brauchen wir das Summenzeichen, das später auch in der Finanzmathematik wieder relevant sein wird.
+
+35
+00:03:47.529 --> 00:03:55.295
+Im ersten Video haben wir den Vektor über die erste Zeile der Matrix gekippt und die übereinanderstehenden Zahlen multipliziert.
+
+36
+00:03:55.845 --> 00:04:04.564
+Mit Zahlen lautet die Rechnung: zwei mal drei plus eins mal fünf plus null mal zwei gleich elf.
+
+37
+00:04:05.064 --> 00:04:16.425
+Mit Symbolen geschrieben ist das a_1,1 mal p_1 plus a_1,2 mal p_2 plus a_1,3 mal p_3.
+
+38
+00:04:17.025 --> 00:04:24.493
+Jedes dieser Produkte hat dieselbe Struktur: a_1,j mal p_j, wobei j von eins bis drei läuft.
+
+39
+00:04:25.093 --> 00:04:30.734
+Um solche Terme aufzuaddieren, nutzt man das Summenzeichen, ein großes Sigma.
+
+40
+00:04:31.184 --> 00:04:39.821
+Unter das Sigma schreibt man den Laufindex mit seinem Startwert, hier j gleich eins, darüber den Endwert, hier die Drei.
+
+41
+00:04:40.321 --> 00:04:45.824
+Und dahinter steht der Term, der für jedes j gebildet und dann aufaddiert wird.
+
+42
+00:04:46.374 --> 00:04:56.201
+Diese Summe ist genau die Rechnung von eben und ergibt elf. Das ist der Umsatz mit Anna und damit der erste Eintrag des Ergebnisses.
+
+43
+00:04:58.101 --> 00:05:05.810
+Bisher haben wir nur die erste Zeile betrachtet. Für eine beliebige Zeile ersetzen wir die Eins im ersten Index durch ein i.
+
+44
+00:05:06.360 --> 00:05:12.326
+Bei zwei Buchstaben im Index lassen wir das Komma wieder weg und schreiben a_ij.
+
+45
+00:05:12.876 --> 00:05:21.365
+Den Ergebnisvektor nennen wir hier u, für Umsatz. Sein i-ter Eintrag u_i ist der Umsatz mit Kundin oder Kunde Nummer i.
+
+46
+00:05:21.915 --> 00:05:32.782
+Damit steht die ganze Rechnung in einer Zeile: u_i gleich Summe über j von eins bis drei von a_ij mal p_j, für i gleich eins bis vier.
+
+47
+00:05:35.482 --> 00:05:45.793
+Fazit. Die einzelnen Elemente einer Matrix werden über einen doppelten Index angesprochen. Dabei steht der erste Index für die Zeile, der zweite für die Spalte.
+
+48
+00:05:46.393 --> 00:05:54.099
+Bei Vektoren verwendet man üblicherweise nur einen Index.
+
+49
+00:05:54.649 --> 00:05:59.683
+Das Produkt von einer Matrix und einem Vektor ist ein Vektor. Die Einträge von diesem Vektor können mit dem Summenzeichen dargestellt und berechnet werden.

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrixrechnung in der BWL – Umsatz je Kundin und Kunde</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../../index.html">Alle Lernvideos</a>
+    ·
+    <a href="../index.html">Matrixrechnung</a>
+  </nav>
+  <h1>Einführung in die Matrixrechnung</h1>
+  <p>Umsatz je Kundin und Kunde</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/e1b293b4320d4ce6b430/?op=view">
+      <track kind="subtitles" src="subtitles_de.vtt" srclang="de" label="Deutsch" default><track kind="chapters" src="chapters.vtt" srclang="de" label="Kapitel" default>
+      Ihr Browser unterstützt das Video-Element nicht.
+    </video>
+  </div>
+
+  <h2>Kapitel</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Einführung und Lernziele</span></button><button class="chapter-button" type="button" data-start="31.817"><span class="chapter-time">00:32</span><span>Ausgangssituation und Daten</span></button><button class="chapter-button" type="button" data-start="96.176"><span class="chapter-time">01:36</span><span>Elementare Umsatzberechnung</span></button><button class="chapter-button" type="button" data-start="153.389"><span class="chapter-time">02:33</span><span>Matrizen und Vektoren</span></button><button class="chapter-button" type="button" data-start="198.506"><span class="chapter-time">03:19</span><span>Matrix-Vektor-Produkt</span></button><button class="chapter-button" type="button" data-start="286.725"><span class="chapter-time">04:47</span><span>Dimensionen prüfen</span></button><button class="chapter-button" type="button" data-start="345.594"><span class="chapter-time">05:46</span><span>Bedeutung und Vorgehen</span></button><button class="chapter-button" type="button" data-start="400.985"><span class="chapter-time">06:41</span><span>Nutzen bei großen Dimensionen</span></button><button class="chapter-button" type="button" data-start="449.009"><span class="chapter-time">07:29</span><span>Fazit</span></button></div>
+
+  <section class="license-box"><h2>Lizenz</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p><p><strong>Symbole:</strong> <a href="https://openmoji.org/">OpenMoji</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Black SVG icons recolored and scaled</p></section>
+
+  <div class="pager">
+    <span></span>
+    <a href="../2_notation/index.html">Notation von Matrizen und Vektoren →</a>
+  </div>
+</main>
+<footer>Matrixrechnung in der BWL – Umsatz je Kundin und Kunde</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

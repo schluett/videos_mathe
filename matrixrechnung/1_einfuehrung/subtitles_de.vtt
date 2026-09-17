@@ -1,0 +1,273 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:08.217
+Dieses Video zeigt an einem kleinen Beispiel, wofür man die Matrixrechnung für wirtschaftliche Anwendungen braucht.
+
+2
+00:00:10.017 --> 00:00:12.031
+Die Lernziele des Videos sind:
+
+3
+00:00:12.481 --> 00:00:18.221
+Erstens: den Nutzen der Matrixrechnung in der BWL an einem Beispiel verstehen.
+
+4
+00:00:18.621 --> 00:00:23.527
+Zweitens: eine Matrix und einen Vektor mit inhaltlicher Bedeutung lesen.
+
+5
+00:00:23.927 --> 00:00:29.217
+Und drittens: ein Matrix-Vektor-Produkt berechnen und inhaltlich prüfen.
+
+6
+00:00:31.817 --> 00:00:36.731
+Stellen wir uns ein kleines Café vor, das nur drei Produkte verkauft.
+
+7
+00:00:37.231 --> 00:00:39.916
+Einen Kaffee für drei Euro.
+
+8
+00:00:40.316 --> 00:00:43.256
+Ein Stück Kuchen für fünf Euro.
+
+9
+00:00:43.656 --> 00:00:46.442
+Und einen Saft für zwei Euro.
+
+10
+00:00:48.142 --> 00:00:55.017
+An einem Vormittag kommen vier Kundinnen und Kunden: Anna, Ben, Clara und David.
+
+11
+00:00:55.567 --> 00:01:00.009
+Von jeder Person wissen wir, welche Mengen der drei Produkte sie gekauft hat.
+
+12
+00:01:01.809 --> 00:01:09.792
+Wir tragen die gekauften Mengen in eine Tabelle ein: in den Zeilen die Kundinnen und Kunden, in den Spalten die Produkte.
+
+13
+00:01:10.342 --> 00:01:15.999
+Anna hat zum Beispiel zwei Kaffee, ein Stück Kuchen und keinen Saft gekauft.
+
+14
+00:01:16.499 --> 00:01:20.893
+Für Ben, Clara und David lesen wir die Mengen genauso ab.
+
+15
+00:01:22.643 --> 00:01:29.628
+Eine betriebswirtschaftlich naheliegende Frage ist nun: Wie viel Umsatz wird mit jeder dieser Personen erzielt?
+
+16
+00:01:30.128 --> 00:01:33.576
+Das ist ein einfacher Indikator für den Kundenwert.
+
+17
+00:01:36.176 --> 00:01:44.178
+Ausrechnen lässt sich das mit ganz elementaren Schritten. Der Umsatz eines Produkts ist Menge mal Preis.
+
+18
+00:01:44.728 --> 00:01:48.422
+Bei Anna sind das zwei Kaffee mal drei Euro.
+
+19
+00:01:48.822 --> 00:01:52.696
+Dazu ein Stück Kuchen mal fünf Euro.
+
+20
+00:01:53.096 --> 00:01:56.504
+Und null Saft mal zwei Euro.
+
+21
+00:01:56.904 --> 00:02:01.288
+In der Summe erzielt das Café mit Anna elf Euro Umsatz.
+
+22
+00:02:01.888 --> 00:02:10.373
+Bei Ben ergibt sich: ein Kaffee mal drei Euro, kein Kuchen, und drei Saft mal zwei Euro. Zusammen sind das neun Euro.
+
+23
+00:02:10.923 --> 00:02:16.254
+Für Clara und David rechnen wir genauso und erhalten zwölf und achtzehn Euro.
+
+24
+00:02:18.104 --> 00:02:22.508
+Die Ergebnisse stimmen, aber diese Schreibweise wird schnell unübersichtlich.
+
+25
+00:02:23.008 --> 00:02:26.341
+Zum einen, wenn die Zahl der Produkte groß wird.
+
+26
+00:02:26.741 --> 00:02:30.739
+Zum anderen, wenn die Zahl der Kundinnen und Kunden groß wird.
+
+27
+00:02:33.389 --> 00:02:38.399
+In der Matrixrechnung bündelt man solche Zahlengerüste in Matrizen und Vektoren.
+
+28
+00:02:38.949 --> 00:02:46.545
+Die drei Preise lassen sich als Spaltenvektor darstellen, also als eine Spalte, in der die Zahlen untereinanderstehen.
+
+29
+00:02:47.045 --> 00:02:52.681
+Wenn die Einträge eine inhaltliche Bedeutung haben, ist es oft hilfreich, diese am Rand anzugeben.
+
+30
+00:02:53.231 --> 00:02:57.531
+Der Vektor bekommt außerdem einen Namen. Wir nennen ihn p wie Preise.
+
+31
+00:02:59.381 --> 00:03:08.357
+Die gekauften Mengen lassen sich als Matrix darstellen. Eine Matrix ist letztlich eine Tabelle mit einer bestimmten Anzahl von Zeilen und Spalten.
+
+32
+00:03:08.907 --> 00:03:13.343
+In den Zeilen stehen hier die Kundinnen und Kunden, in den Spalten die Produkte. Auch das schreiben wir an den Rand.
+
+33
+00:03:13.843 --> 00:03:15.856
+Diese Matrix nennen wir A.
+
+34
+00:03:18.506 --> 00:03:28.790
+Die gesuchten Umsätze je Person können wir nun mit einer einzigen Matrixoperation bestimmen: mit dem Produkt aus der Matrix A und dem Spaltenvektor p.
+
+35
+00:03:29.340 --> 00:03:37.065
+Das Matrix-Vektor-Produkt läuft so ab, dass der Spaltenvektor gekippt und über die erste Zeile der Matrix gelegt wird.
+
+36
+00:03:37.615 --> 00:03:42.528
+Die Zahlen, die nun übereinanderstehen, werden miteinander malgenommen.
+
+37
+00:03:42.978 --> 00:03:50.293
+Zwei mal drei ist sechs, eins mal fünf ist fünf, und null mal zwei ist null.
+
+38
+00:03:50.743 --> 00:03:56.576
+Anschließend werden die Produkte addiert: sechs plus fünf plus null ergibt elf.
+
+39
+00:03:57.076 --> 00:04:03.411
+Elf Euro, das ist der Umsatz mit Anna und damit der erste Eintrag des Ergebnisses.
+
+40
+00:04:04.011 --> 00:04:14.349
+Nun wandert der gekippte Vektor eine Zeile nach unten. Für Ben ergibt sich eins mal drei plus null mal fünf plus drei mal zwei, also neun.
+
+41
+00:04:14.849 --> 00:04:21.792
+Für Clara: null mal drei plus zwei mal fünf plus eins mal zwei, also zwölf.
+
+42
+00:04:22.292 --> 00:04:28.487
+Und für David: drei mal drei plus eins mal fünf plus zwei mal zwei, also achtzehn.
+
+43
+00:04:29.087 --> 00:04:38.374
+Im Ergebnis erhalten wir einen Spaltenvektor mit so vielen Elementen, wie die Matrix A Zeilen hat, also einen Wert je Kundin und Kunde.
+
+44
+00:04:38.924 --> 00:04:44.025
+Es ist genau die Rechnung, die wir uns vorher mit elementaren Schritten überlegt haben.
+
+45
+00:04:46.725 --> 00:04:49.244
+Drei Dinge sind hier besonders zu beachten.
+
+46
+00:04:49.794 --> 00:04:56.186
+Erstens: Ein Matrix-Vektor-Produkt lässt sich nur dann berechnen, wenn die Dimensionen zusammenpassen.
+
+47
+00:04:56.636 --> 00:05:03.374
+Dimension heißt hier: Wie viele Zeilen und wie viele Spalten haben die Matrix beziehungsweise der Vektor?
+
+48
+00:05:03.874 --> 00:05:11.436
+Die Matrix A hat vier Zeilen und drei Spalten. Ihre Dimension ist also vier kreuz drei.
+
+49
+00:05:11.886 --> 00:05:18.551
+Der Vektor p hat drei Zeilen und eine Spalte, seine Dimension ist drei kreuz eins.
+
+50
+00:05:19.051 --> 00:05:29.155
+Damit das Produkt A mal p berechnet werden kann, müssen die beiden Zahlen, die nebeneinanderstehen, übereinstimmen. Hier ist das der Fall: beide Male die Drei.
+
+51
+00:05:29.705 --> 00:05:33.784
+Das Ergebnis hat dann die Dimension vier kreuz eins.
+
+52
+00:05:34.334 --> 00:05:42.894
+Umgekehrt ist das Produkt p mal A nicht definiert. Dort stünden eine Eins und eine Vier nebeneinander.
+
+53
+00:05:45.594 --> 00:05:53.984
+Zweitens: Wenn die Objekte eine inhaltliche Bedeutung haben, kann das Produkt nur dann Sinn ergeben, wenn diese Bedeutungen zusammenpassen.
+
+54
+00:05:54.484 --> 00:06:02.384
+Die Spalten des linken Objekts müssen dieselbe Bedeutung haben wie die Zeilen des rechten Objekts. Hier sind es jeweils die Produkte.
+
+55
+00:06:02.934 --> 00:06:10.314
+Und die Zeilen des linken Objekts haben dieselbe Bedeutung wie die Zeilen des Ergebnisses. Hier sind es die Kundinnen und Kunden.
+
+56
+00:06:12.314 --> 00:06:21.789
+Drittens: Bevor man eine Matrixoperation aufstellt, sollte man immer inhaltlich überlegen, welche elementaren Rechenschritte zum gesuchten Ergebnis führen.
+
+57
+00:06:22.289 --> 00:06:26.529
+Hier war das: gekaufte Menge mal Preis, summiert über die Produkte.
+
+58
+00:06:26.979 --> 00:06:31.914
+Und erst danach überlegt man, welche Matrixoperation genau diese Rechnung abbildet.
+
+59
+00:06:32.364 --> 00:06:38.285
+Nur so ist sichergestellt, dass die Operation inhaltlich sinnvoll ist und richtig interpretiert wird.
+
+60
+00:06:40.985 --> 00:06:48.135
+Richtig hilfreich wird die Matrixrechnung, wenn die Dimensionen groß werden.
+
+61
+00:06:48.635 --> 00:06:57.315
+Unser Beispiel ist sehr klein gehalten. Reale Unternehmen haben viel mehr Produkte sowie Kundinnen und Kunden und müssen solche Rechnungen häufig und in kurzer Zeit durchführen.
+
+62
+00:06:57.865 --> 00:07:03.315
+Matrixoperationen sind dann meist viel sinnvoller, als lauter Einzelrechnungen anzugeben. Denn sie haben drei Vorteile.
+
+63
+00:07:03.815 --> 00:07:09.690
+Sie lassen sich kompakt aufschreiben, hier einfach als A mal p.
+
+64
+00:07:10.140 --> 00:07:20.599
+Sie lassen sich einfacher an Computer übergeben als die Einzelrechnungen, zum Beispiel in Excel, bei größeren Datenmengen in R, MATLAB oder Python mit NumPy.
+
+65
+00:07:21.049 --> 00:07:26.309
+Und sie lassen sich effizient auf viele Datensätze gleichzeitig anwenden und automatisieren.
+
+66
+00:07:29.009 --> 00:07:37.659
+Matrizen und Vektoren bündeln betriebswirtschaftliche Zahlengerüste: hier die Mengen in der Matrix A und die Preise im Vektor p.
+
+67
+00:07:38.209 --> 00:07:48.129
+Das Matrix-Vektor-Produkt A mal p liefert den Umsatz je Kundin und Kunde in einem Schritt und bleibt übersichtlich, wenn Produkte und Kundschaft mehr werden.
+
+68
+00:07:48.679 --> 00:07:56.130
+Und zum Merken: bei Matrixoperationen zunächst die Dimensionen prüfen, dann die Bedeutung von Zeilen und Spalten.

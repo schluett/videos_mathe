@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrixrechnung in der BWL – Einträge und formale Notation</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="../../index.html">Alle Lernvideos</a>
+    ·
+    <a href="../index.html">Matrixrechnung</a>
+  </nav>
+  <h1>Notation von Matrizen und Vektoren</h1>
+  <p>Einträge, Indizes und das Summenzeichen</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/3b1de9b93a3648f28284/?op=view">
+      <track kind="subtitles" src="subtitles_de.vtt" srclang="de" label="Deutsch" default><track kind="chapters" src="chapters.vtt" srclang="de" label="Kapitel" default>
+      Ihr Browser unterstützt das Video-Element nicht.
+    </video>
+  </div>
+
+  <h2>Kapitel</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Einführung und Lernziele</span></button><button class="chapter-button" type="button" data-start="38.546"><span class="chapter-time">00:39</span><span>Einträge einer Matrix</span></button><button class="chapter-button" type="button" data-start="109.039"><span class="chapter-time">01:49</span><span>Zwei Leseübungen</span></button><button class="chapter-button" type="button" data-start="178.404"><span class="chapter-time">02:58</span><span>Einträge eines Vektors</span></button><button class="chapter-button" type="button" data-start="213.465"><span class="chapter-time">03:33</span><span>Summenzeichen und allgemeiner Eintrag</span></button><button class="chapter-button" type="button" data-start="335.482"><span class="chapter-time">05:35</span><span>Fazit</span></button></div>
+
+  <section class="license-box"><h2>Lizenz</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p><p><strong>Symbole:</strong> <a href="https://openmoji.org/">OpenMoji</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Black SVG icons recolored and scaled</p></section>
+
+  <div class="pager">
+    <a href="../1_einfuehrung/index.html">← Einführung in die Matrixrechnung</a>
+    <span></span>
+  </div>
+</main>
+<footer>Matrixrechnung in der BWL – Einträge und formale Notation</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
