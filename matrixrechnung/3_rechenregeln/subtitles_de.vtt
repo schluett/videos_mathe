@@ -1,0 +1,205 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:10.585
+Bisher haben wir Matrizen kennengelernt und einzelne Einträge mit Indizes bezeichnet. Nun betrachten wir weitere grundlegende Rechenoperationen mit Matrizen.
+
+2
+00:00:12.285 --> 00:00:14.387
+Die Lernziele des Videos sind:
+
+3
+00:00:14.837 --> 00:00:18.240
+Erstens: Matrizen addieren und subtrahieren.
+
+4
+00:00:18.640 --> 00:00:22.291
+Zweitens: Eine Matrix mit einer Zahl multiplizieren.
+
+5
+00:00:22.691 --> 00:00:30.227
+Und drittens: Voraussetzungen für sinnvolle Matrixoperationen prüfen und das Distributivgesetz anwenden.
+
+6
+00:00:32.027 --> 00:00:44.511
+Wir bleiben beim Café-Beispiel. Die Matrix A beschreibt die Mengen, die Anna, Ben, Clara und David am ersten Tag gekauft haben; die Preise stehen weiterhin im Vektor p.
+
+7
+00:00:46.011 --> 00:00:52.959
+Nun kommt ein zweiter Tag dazu. Die Matrix B enthält die Mengen dieses zweiten Tages.
+
+8
+00:00:53.509 --> 00:01:02.086
+Zeilen, Spalten und Einheit sind dieselben wie bei A: dieselben Personen, dieselben Produkte, jeweils Stückzahlen.
+
+9
+00:01:03.636 --> 00:01:07.978
+Uns interessiert, wie viel jede Person an beiden Tagen zusammen gekauft hat.
+
+10
+00:01:08.528 --> 00:01:19.103
+Bei Anna und Kaffee sind das zwei Stück am ersten Tag und ein Stück am zweiten Tag, zusammen also drei. Bei Ben und Saft drei plus null, ebenfalls drei.
+
+11
+00:01:19.653 --> 00:01:26.138
+Genauso entsteht jeder weitere Eintrag. Die Ergebnismatrix nennen wir C.
+
+12
+00:01:27.688 --> 00:01:40.298
+Im letzten Video haben wir gelernt, einzelne Einträge mit zwei Indizes zu bezeichnen. Damit lässt sich diese Regel allgemein formulieren: c_ij entsteht aus a_ij plus b_ij.
+
+13
+00:01:40.848 --> 00:01:44.495
+Die Addition wird also eintragsweise ausgeführt.
+
+14
+00:01:47.195 --> 00:02:02.589
+Damit eine Summe zweier Matrizen überhaupt gebildet werden kann, müssen beide dieselbe Dimension haben.
+
+15
+00:02:03.139 --> 00:02:12.379
+A und B sind beide 4 x 3. Die Addition ist also definiert, und auch C hat die Dimension 4 x 3.
+
+16
+00:02:12.929 --> 00:02:17.956
+Beim Matrix-Vektor-Produkt mussten nur die inneren Dimensionen zusammenpassen. Bei der Addition müssen beide Dimensionen vollständig übereinstimmen.
+
+17
+00:02:19.606 --> 00:02:30.642
+In einer betriebswirtschaftlichen Anwendung reicht die gleiche Dimension allein aber nicht aus.
+
+18
+00:02:31.192 --> 00:02:38.026
+Auch die Bedeutung der korrespondierenden Einträge sollte übereinstimmen: dieselben Personen in den Zeilen, dieselben Produkte in den Spalten und in beiden Matrizen Stückzahlen.
+
+19
+00:02:38.626 --> 00:02:44.154
+Mathematisch könnten wir auch zwei gleich große Matrizen addieren, deren Einträge völlig unterschiedliche Größen darstellen. Das Ergebnis hätte dann aber möglicherweise keine sinnvolle betriebswirtschaftliche Interpretation.
+
+20
+00:02:46.854 --> 00:02:55.039
+Nun zu den Retouren. Die Matrix R enthält die Stückzahlen, die aus den beiden betrachteten Tagen zurückgegeben wurden.
+
+21
+00:02:55.589 --> 00:03:05.448
+Ben hat einen Saft zurückgegeben: drei minus eins ergibt zwei. Clara hat einen Kaffee zurückgegeben: eins minus eins ergibt null.
+
+22
+00:03:05.998 --> 00:03:11.857
+Alle übrigen Einträge bleiben unverändert. Die Ergebnismatrix nennen wir D.
+
+23
+00:03:12.457 --> 00:03:22.097
+Allgemein gilt: d_ij ist gleich c_ij minus r_ij. Auch die Subtraktion wird eintragsweise ausgeführt.
+
+24
+00:03:22.697 --> 00:03:37.049
+Kein Eintrag von D ist negativ. Negative Werte wären mathematisch möglich, würden hier aber bedeuten, dass mehr Stück zurückgegeben als gekauft wurden. Das wäre ein Hinweis auf inkonsistente Daten.
+
+25
+00:03:39.349 --> 00:03:52.331
+Wir kommen nun zur Skalarmultiplikation. Einen Skalar nennt man in der Matrixrechnung eine einzelne Zahl. Bei einer Skalarmultiplikation wird eine Zahl mit einer Matrix multipliziert.
+
+26
+00:03:52.931 --> 00:04:06.650
+Als Beispiel nehmen wir an, dass in einer vergleichbaren Folgeperiode jede der betrachteten Mengen genau doppelt so hoch ist wie in der Matrix C. Wir führen hier eine Skalarmultiplikation der Matrix C mit dem Skalar 2 durch.
+
+27
+00:04:07.250 --> 00:04:15.085
+Dazu wird jeder Eintrag von C mit 2 multipliziert: aus 3 wird 6, aus 1 wird 2.
+
+28
+00:04:15.635 --> 00:04:18.298
+Die Ergebnismatrix nennen wir E.
+
+29
+00:04:19.998 --> 00:04:31.913
+Allgemein gilt: Die Skalarmultiplikation erfolgt auch eintragsweise. Hier können wir schreiben: e_ij = 2 · c_ij.
+
+30
+00:04:32.563 --> 00:04:39.161
+Natürlich kann man eine Skalarmultiplikation auch mit jeder anderen Zahl als 2 durchführen.
+
+31
+00:04:40.961 --> 00:04:49.986
+Addition, Subtraktion und Skalarmultiplikation haben damit etwas gemeinsam: Sie werden alle eintragsweise ausgeführt.
+
+32
+00:04:52.686 --> 00:05:04.443
+Wir betrachten nun eine Rechnung, in der sowohl eine Matrizensumme als auch ein Matrix-Vektor-Produkt vorkommen. Wir werden sehen, dass es hier zwei Rechenwege gibt, die zum selben Ergebnis führen.
+
+33
+00:05:05.043 --> 00:05:15.025
+Auf der linken Seite addieren wir zunächst A und B zur Matrix C. Dann bewerten wir C mit den Preisen: Wir führen also das Matrix-Vektor-Produkt aus.
+
+34
+00:05:15.575 --> 00:05:21.963
+Dazu kippen wir die Einträge im Preisvektor über die Matrix mit den Stückzahlen.
+
+35
+00:05:22.513 --> 00:05:34.118
+Im ersten Eintrag ergibt sich: 3 Tassen Kaffee mal 3 Euro plus 1 Stück Kuchen mal 5 Euro plus 2 Gläser Saft mal 2 Euro. Das sind zusammen 18 Euro.
+
+36
+00:05:35.918 --> 00:05:52.796
+Entsprechend werden auch die übrigen Zeilen mit dem Preisvektor multipliziert. Da die Zeilen der Matrix C für die vier Kundinnen und Kunden stehen, geben uns auch die vier Werte im Ergebnisvektor an, wie hoch der Umsatz über beide Tage hinweg je Kunde ist.
+
+37
+00:05:54.846 --> 00:06:04.091
+Auf der rechten Seite gehen wir anders vor. Wir multiplizieren zunächst A und B jeweils separat mit dem Preisvektor p.
+
+38
+00:06:04.991 --> 00:06:14.907
+Für A · p erhalten wir den Vektor 11, 9, 12 und 18. Für B · p den Vektor 7, 11, 10 und 12.
+
+39
+00:06:15.657 --> 00:06:26.083
+Diese Zwischenergebnisse haben eine Bedeutung: A · p gibt die Umsätze je Person am ersten Tag an, B · p die Umsätze je Person am zweiten Tag.
+
+40
+00:06:26.883 --> 00:06:42.816
+Die Umsätze können über die Tage addiert werden. In Summe erhalten wir den gleichen Vektor wie in der Rechnung links, also wieder den Gesamtumsatz über beide Tage hinweg, aber getrennt für Anna, Ben, Clara und David.
+
+41
+00:06:45.716 --> 00:06:52.775
+Was wir hier gesehen haben, entspricht auch einem allgemeinen Rechengesetz, und zwar dem Distributivgesetz.
+
+42
+00:06:53.425 --> 00:07:02.248
+Das Distributivgesetz dürfte für das Rechnen mit einzelnen Zahlen aus der Schule bekannt sein, und es gilt auch hier in der Matrixrechnung.
+
+43
+00:07:02.898 --> 00:07:12.701
+Mit den hier genutzten Bezeichnungen heißt das Distributivgesetz: (A + B) · p = A · p + B · p.
+
+44
+00:07:13.401 --> 00:07:25.034
+Die Voraussetzung ist, dass die Dimensionen zusammenpassen. Das heißt: A und B müssen dieselbe Dimension haben und jeweils so viele Spalten, wie p Einträge hat.
+
+45
+00:07:26.784 --> 00:07:36.302
+Auf der linken Seite wird also erst die Matrizensumme gebildet. Auf der rechten Seite wird jede Matrix mit dem Vektor p multipliziert und dann wird addiert.
+
+46
+00:07:37.052 --> 00:07:45.405
+Betriebswirtschaftlich heißt das: Wir können die Mengen beider Tage zuerst zusammenzählen und das Ergebnis anschließend mit den Preisen bewerten.
+
+47
+00:07:46.005 --> 00:07:53.612
+Oder wir bewerten jeden Tag einzeln und addieren anschließend die Umsätze. Beides führt zum selben Ergebnis.
+
+48
+00:07:56.412 --> 00:08:02.462
+Fazit. Matrizen gleicher Dimension werden eintragsweise addiert und subtrahiert.
+
+49
+00:08:03.062 --> 00:08:07.600
+Auch die Multiplikation einer Matrix mit einer Zahl erfolgt eintragsweise.
+
+50
+00:08:08.200 --> 00:08:13.887
+In Anwendungen müssen neben den Dimensionen auch Bedeutung und Einheit der Einträge geprüft werden.
+
+51
+00:08:14.537 --> 00:08:22.045
+Das Distributivgesetz gilt auch in der Matrixrechnung, wenn die Dimensionen zusammenpassen, sodass die Rechnung definiert ist.
