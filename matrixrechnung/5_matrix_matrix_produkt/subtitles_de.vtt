@@ -1,0 +1,265 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:20.026
+Dieses Video zeigt, wie sich mehrere Produktionspläne gleichzeitig mit der Matrixrechnung auswerten lassen. Im letzten Video haben wir für einen Produktionsplan den gesamten Rohstoffbedarf mit einem Matrix-Vektor-Produkt berechnet. Nun betrachten wir mehrere Produktionspläne gleichzeitig.
+
+2
+00:00:21.776 --> 00:00:24.004
+Die Lernziele des Videos sind:
+
+3
+00:00:24.454 --> 00:00:29.838
+Erstens: mehrere Produktionsvektoren spaltenweise zu einer Matrix zusammenfassen.
+
+4
+00:00:30.238 --> 00:00:37.064
+Zweitens: ein Matrix-Matrix-Produkt als mehrere Matrix-Vektor-Produkte gleichzeitig verstehen.
+
+5
+00:00:37.464 --> 00:00:43.820
+Und drittens: Dimensionen und inhaltliche Bedeutung eines Matrix-Matrix-Produkts prüfen.
+
+6
+00:00:45.620 --> 00:01:01.729
+Wir bleiben bei der Eismanufaktur. Die Matrix A enthält weiterhin den Rohstoffbedarf je Charge: in den Zeilen die Rohstoffe, in den Spalten die Produkte. Diese Zuordnung bleibt im gesamten Beispiel unverändert.
+
+7
+00:01:02.329 --> 00:01:12.770
+Im letzten Video haben wir einen Vektor x betrachtet, der angibt, welche Mengen von jeder Eissorte produziert werden sollen, also den Produktionsplan.
+
+8
+00:01:13.120 --> 00:01:21.102
+Wir nennen diesen Vektor nun x^(1). Die Eins im Index oben ist keine Potenz, sondern wird zur Nummerierung verwendet.
+
+9
+00:01:21.552 --> 00:01:25.767
+Der Produktionsplan enthält dieselben Mengen wie im letzten Video.
+
+10
+00:01:26.267 --> 00:01:32.913
+Das Produkt A · x^(1) gibt den Rohstoffbedarf zur Umsetzung des Produktionsplans an.
+
+11
+00:01:33.463 --> 00:01:40.820
+Das Ergebnis waren siebzig Liter Milch, sechsundvierzig Kilogramm Früchte und achtunddreißig Tafeln Schokolade.
+
+12
+00:01:43.570 --> 00:01:52.355
+Nehmen wir nun an, wir möchten nicht nur einen Produktionsplan betrachten, sondern drei verschiedene, zum Beispiel für drei aufeinanderfolgende Wochen.
+
+13
+00:01:52.905 --> 00:02:12.800
+Jeder dieser Vektoren beschreibt einen vollständigen Produktionsplan. Seine drei Einträge stehen in allen drei Vektoren in derselben Reihenfolge für Softeis, Eisbecher und Sorbet. Die Position eines Eintrags hat damit in allen drei Vektoren dieselbe inhaltliche Bedeutung.
+
+14
+00:02:13.450 --> 00:02:27.517
+Der hochgestellte Index in Klammern nummeriert dabei ganze Produktionspläne und nicht einzelne Einträge. Ein einzelner Eintrag bekäme wie im zweiten Video einen tiefgestellten Index.
+
+15
+00:02:29.217 --> 00:02:35.220
+Wie können wir den Rohstoffbedarf für alle drei Produktionspläne gemeinsam berechnen?
+
+16
+00:02:36.120 --> 00:02:41.166
+Wir könnten für jeden Produktionsplan einzeln ein Matrix-Vektor-Produkt berechnen.
+
+17
+00:02:42.116 --> 00:02:46.754
+Das wäre korrekt, würde aber denselben Rechenschritt dreimal getrennt notieren.
+
+18
+00:02:47.204 --> 00:02:52.529
+Dabei fällt auf: Die Bedarfsmatrix A bleibt jedes Mal dieselbe.
+
+19
+00:02:53.379 --> 00:02:55.944
+Nur der Produktionsvektor wechselt.
+
+20
+00:02:57.244 --> 00:03:01.495
+Genau diese Wiederholung wollen wir nun in einer einzigen Rechnung bündeln.
+
+21
+00:03:03.145 --> 00:03:09.028
+Wir können die drei Produktionsvektoren spaltenweise zu einer Matrix zusammenfassen.
+
+22
+00:03:10.078 --> 00:03:12.427
+Wir nennen diese Matrix B.
+
+23
+00:03:13.177 --> 00:03:16.788
+Jeder bisherige Vektor ist in B eine Spalte.
+
+24
+00:03:17.788 --> 00:03:24.111
+Die Zeilen von B stehen wie zuvor in den Produktionsvektoren für die drei Eissorten.
+
+25
+00:03:25.161 --> 00:03:36.108
+Damit hängt jeder Eintrag von B von zwei Kennzeichen ab: vom Produkt und vom Produktionsplan. Genau deshalb ist B eine Matrix und kein Vektor.
+
+26
+00:03:38.908 --> 00:03:54.298
+Statt drei einzelne Matrix-Vektor-Produkte zu berechnen, können wir die Bedarfsmatrix A direkt mit der Matrix B der Produktionspläne multiplizieren. Die rechte Matrix bündelt also genau die drei Vektoren, die wir sonst nacheinander einsetzen würden.
+
+27
+00:03:54.948 --> 00:04:00.994
+Das Matrix-Matrix-Produkt können wir hier als mehrere Matrix-Vektor-Produkte gleichzeitig verstehen. Jede Spalte von B wird genauso behandelt wie der einzelne Produktionsvektor aus dem letzten Video.
+
+28
+00:04:01.444 --> 00:04:06.964
+Die vertikalen Striche in der Formel dienen hier zur Abgrenzung der Spalten.
+
+29
+00:04:07.814 --> 00:04:15.574
+A · B ist hier eine Matrix mit drei Spalten.
+
+30
+00:04:16.124 --> 00:04:21.163
+Um das Ergebnis zu berechnen, wird A zunächst mit der ersten Spalte von B multipliziert.
+
+31
+00:04:21.713 --> 00:04:26.013
+Das Ergebnis hiervon schreiben wir als erste Spalte der Ergebnismatrix auf.
+
+32
+00:04:26.563 --> 00:04:30.299
+Als Nächstes wird A mit der zweiten Spalte von B multipliziert.
+
+33
+00:04:30.849 --> 00:04:34.985
+Dieses Ergebnis schreiben wir als zweite Spalte in der Ergebnismatrix auf.
+
+34
+00:04:35.535 --> 00:04:42.032
+Als Letztes wird A mit der dritten Spalte von B multipliziert und das Ergebnis als dritte Spalte aufgeschrieben.
+
+35
+00:04:44.832 --> 00:04:49.601
+Wir rechnen nun im Detail den ersten Eintrag der Ergebnismatrix nach.
+
+36
+00:04:50.151 --> 00:05:04.831
+Dazu betrachten wir die erste Zeile von A und die erste Spalte von B. Wir setzen die Spalte von B aufrecht über die Zeile von A: der oberste Eintrag steht über der linken Spalte, der unterste über der rechten.
+
+37
+00:05:05.281 --> 00:05:16.363
+Das Rechenschema ist also genau so wie beim Matrix-Vektor-Produkt. Vier mal zehn plus fünf mal sechs plus null mal vier ergibt siebzig.
+
+38
+00:05:16.963 --> 00:05:20.762
+Das sind siebzig Liter Milch für den ersten Produktionsplan.
+
+39
+00:05:22.512 --> 00:05:32.519
+Um den Eintrag zwei, eins der Ergebnismatrix nachzurechnen, betrachten wir die zweite Zeile von A und weiterhin die erste Spalte von B.
+
+40
+00:05:33.169 --> 00:05:40.334
+Eins mal zehn plus zwei mal sechs plus sechs mal vier ergibt sechsundvierzig.
+
+41
+00:05:40.934 --> 00:05:45.867
+Das sind sechsundvierzig Kilogramm Früchte für den ersten Produktionsplan.
+
+42
+00:05:47.617 --> 00:05:52.170
+Als drittes Beispiel rechnen wir den Eintrag eins, zwei der Ergebnismatrix vor.
+
+43
+00:05:53.070 --> 00:05:56.366
+Dazu nehmen wir wieder die erste Zeile von A.
+
+44
+00:05:57.166 --> 00:06:00.218
+Jetzt aber die zweite Spalte von B.
+
+45
+00:06:01.818 --> 00:06:08.950
+Vier mal acht plus fünf mal zehn plus null mal fünf ergibt zweiundachtzig.
+
+46
+00:06:09.550 --> 00:06:14.993
+Das sind zweiundachtzig Liter Milch für den zweiten Produktionsplan.
+
+47
+00:06:15.693 --> 00:06:26.404
+Dieses Prinzip gilt für alle Einträge der Ergebnismatrix: Die Zeile der linken Matrix bestimmt den Rohstoff, die Spalte der rechten Matrix bestimmt den Produktionsplan.
+
+48
+00:06:29.204 --> 00:06:32.714
+Die übrigen Einträge entstehen nach demselben Muster.
+
+49
+00:06:34.064 --> 00:06:38.558
+Im letzten Schritt dieser Rechnung sollten wir die Ergebnismatrix noch beschriften.
+
+50
+00:06:39.008 --> 00:06:46.015
+Die Zeilen im Ergebnis haben immer dieselbe Bedeutung wie die Zeilen der linken Matrix, hier also die Rohstoffe.
+
+51
+00:06:47.065 --> 00:06:55.038
+Die Spalten des Ergebnisses haben immer dieselbe Bedeutung wie die Spalten der rechten Matrix, hier also die Produktionspläne.
+
+52
+00:06:57.588 --> 00:07:11.572
+Für ein Matrix-Matrix-Produkt gibt es Voraussetzungen, wie schon beim Matrix-Vektor-Produkt: erstens, ob es vom Format her überhaupt berechnet werden kann, und zweitens, ob es inhaltlich Sinn ergeben kann.
+
+53
+00:07:12.272 --> 00:07:18.988
+Zum Format betrachten wir hier die Dimensionen. A hat drei Zeilen und drei Spalten.
+
+54
+00:07:19.788 --> 00:07:23.447
+B hat ebenfalls drei Zeilen und drei Spalten.
+
+55
+00:07:24.247 --> 00:07:31.452
+Die beiden inneren Zahlen stimmen überein, daher ist das Format hier für die Multiplikation geeignet.
+
+56
+00:07:32.102 --> 00:07:36.367
+Die äußeren Zahlen bestimmen die Dimension des Ergebnisses.
+
+57
+00:07:36.817 --> 00:07:41.252
+Die Ergebnismatrix hat drei Zeilen und drei Spalten.
+
+58
+00:07:43.902 --> 00:08:00.706
+Allgemein kann eine m × n Matrix mit einer n × r Matrix multipliziert werden. Das Ergebnis ist dann eine m × r Matrix. Dabei dürfen m und r verschieden sein; nur die beiden inneren Dimensionszahlen n müssen übereinstimmen.
+
+59
+00:08:02.756 --> 00:08:17.006
+Damit ist die Frage nach dem Format geklärt. Die zweite Voraussetzung betrifft den Inhalt: Auch die Bedeutungen müssen zusammenpassen. Diese Prüfung ist die inhaltliche Entsprechung der übereinstimmenden inneren Dimensionen.
+
+60
+00:08:17.656 --> 00:08:29.289
+Die Spalten von A stehen für die Produkte, und die Zeilen von B stehen ebenfalls für die Produkte. Genau diese gemeinsame Bedeutung verbindet die beiden inneren Dimensionen.
+
+61
+00:08:29.939 --> 00:08:36.303
+Aus den Zeilen der linken Matrix A werden die Zeilen des Ergebnisses, hier also die Rohstoffe.
+
+62
+00:08:36.903 --> 00:08:51.981
+Und aus den Spalten der rechten Matrix B werden die Spalten des Ergebnisses, hier die Produktionspläne. Dimensionen und Bedeutungen des Ergebnisses lassen sich also beide unmittelbar aus den beiden Faktoren ablesen.
+
+63
+00:08:55.631 --> 00:09:06.481
+Fazit. Beim Matrix-Matrix-Produkt betrachten wir die rechte Matrix spaltenweise.
+
+64
+00:09:07.381 --> 00:09:12.301
+Mit jeder Spalte der rechten Matrix wird ein Matrix-Vektor-Produkt gebildet.
+
+65
+00:09:13.201 --> 00:09:17.996
+Die Ergebnismatrix zeigt hier die Rohstoffbedarfe der verschiedenen Produktionspläne.
+
+66
+00:09:18.546 --> 00:09:24.676
+Das Matrix-Matrix-Produkt erweitert damit die Idee des Matrix-Vektor-Produkts: Statt nur einen Produktionsplan auszuwerten, können wir mehrere Produktionspläne gleichzeitig verarbeiten.
