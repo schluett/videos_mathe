@@ -1,0 +1,273 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:05.653
+This video uses a small example to show why matrix algebra is useful in business.
+
+2
+00:00:07.653 --> 00:00:10.545
+The learning goals of this video are the following.
+
+3
+00:00:12.245 --> 00:00:18.040
+First: to understand what matrix algebra is good for in business, using one concrete example.
+
+4
+00:00:19.690 --> 00:00:24.962
+Second: to read a matrix and a vector whose entries carry a real business meaning.
+
+5
+00:00:26.612 --> 00:00:32.052
+And third: to compute a matrix-vector product and to check the result against that meaning.
+
+6
+00:00:34.652 --> 00:00:38.469
+Imagine a small café that sells just three products.
+
+7
+00:00:39.019 --> 00:00:40.810
+A coffee for three euros.
+
+8
+00:00:41.260 --> 00:00:43.571
+A slice of cake for five euros.
+
+9
+00:00:44.021 --> 00:00:46.023
+And a juice for two euros.
+
+10
+00:00:47.873 --> 00:00:53.051
+One morning, four customers come in: Anna, Ben, Clara and David.
+
+11
+00:00:53.651 --> 00:00:56.967
+For each of them, we know the quantities of the three products they bought.
+
+12
+00:00:58.917 --> 00:01:04.494
+We write the quantities into a table: the customers in the rows, the products in the columns.
+
+13
+00:01:05.094 --> 00:01:10.276
+Anna, for example, bought two coffees, one slice of cake and no juice.
+
+14
+00:01:10.826 --> 00:01:15.991
+For Ben, Clara and David we read off the quantities in exactly the same way.
+
+15
+00:01:17.991 --> 00:01:24.218
+A natural business question now is this: how much revenue do we generate with each of these customers?
+
+16
+00:01:24.768 --> 00:01:27.798
+That is a simple indicator of customer value.
+
+17
+00:01:30.448 --> 00:01:36.720
+We can work this out with completely elementary steps. The revenue from one product is quantity times price.
+
+18
+00:01:37.320 --> 00:01:40.717
+For Anna, that is two coffees times three euros.
+
+19
+00:01:41.167 --> 00:01:44.455
+Plus one slice of cake times five euros.
+
+20
+00:01:44.905 --> 00:01:47.867
+And zero juice times two euros.
+
+21
+00:01:48.317 --> 00:01:52.250
+In total, the café generates eleven euros of revenue with Anna.
+
+22
+00:01:52.900 --> 00:02:01.374
+For Ben we get one coffee times three euros, no cake, and three juices times two euros. Together, that is nine euros.
+
+23
+00:02:01.974 --> 00:02:07.665
+For Clara and David we calculate in the same way and obtain twelve and eighteen euros.
+
+24
+00:02:09.765 --> 00:02:14.449
+The results are correct, but this way of writing things quickly becomes hard to follow.
+
+25
+00:02:14.999 --> 00:02:18.714
+On the one hand, when the number of products grows.
+
+26
+00:02:19.164 --> 00:02:22.129
+On the other hand, when the number of customers grows.
+
+27
+00:02:24.829 --> 00:02:30.393
+In matrix algebra, we bundle arrays of numbers like these into matrices and vectors.
+
+28
+00:02:30.993 --> 00:02:38.158
+The three prices can be written as a column vector, that is, as a single column with the numbers one below the other.
+
+29
+00:02:38.708 --> 00:02:43.396
+When the entries carry a meaning, it is often helpful to note that meaning in the margin.
+
+30
+00:02:43.996 --> 00:02:48.191
+The vector also gets a name. We call it p, for prices.
+
+31
+00:02:50.191 --> 00:02:57.226
+The quantities bought can be written as a matrix. A matrix is essentially a table with a given number of rows and columns.
+
+32
+00:02:57.826 --> 00:03:04.082
+Here, the rows hold the customers and the columns hold the products. We note that in the margin as well.
+
+33
+00:03:04.732 --> 00:03:07.009
+We call this matrix A.
+
+34
+00:03:09.709 --> 00:03:16.682
+We can now find the revenue per customer with a single matrix operation: the product of the matrix A and the column vector p.
+
+35
+00:03:17.282 --> 00:03:25.839
+The matrix-vector product works like this. The column vector is tipped onto its side and laid over the first row of the matrix.
+
+36
+00:03:26.439 --> 00:03:29.123
+The numbers that now sit above one another are multiplied.
+
+37
+00:03:29.623 --> 00:03:35.214
+Two times three is six, one times five is five, and zero times two is zero.
+
+38
+00:03:35.714 --> 00:03:40.054
+The three products are then added: six plus five plus zero gives eleven.
+
+39
+00:03:40.604 --> 00:03:46.056
+Eleven euros. That is the revenue with Anna, and the first entry of the result.
+
+40
+00:03:46.706 --> 00:03:56.047
+Now the tipped vector moves down one row. For Ben we get one times three, plus zero times five, plus three times two, which is nine.
+
+41
+00:03:56.647 --> 00:04:04.154
+For Clara: zero times three, plus two times five, plus one times two, which is twelve.
+
+42
+00:04:04.754 --> 00:04:10.548
+And for David: three times three, plus one times five, plus two times two, which is eighteen.
+
+43
+00:04:11.248 --> 00:04:18.584
+The result is a column vector with as many entries as the matrix A has rows, so one value for every customer.
+
+44
+00:04:19.184 --> 00:04:23.767
+It is exactly the calculation we worked out earlier with elementary steps.
+
+45
+00:04:26.517 --> 00:04:28.546
+There are three things to keep in mind here.
+
+46
+00:04:30.346 --> 00:04:35.489
+First: a matrix-vector product can only be computed if the dimensions match.
+
+47
+00:04:35.989 --> 00:04:42.406
+Dimension here means: how many rows and how many columns does the matrix, or the vector, have?
+
+48
+00:04:42.956 --> 00:04:48.957
+The matrix A has four rows and three columns. Its dimension is therefore four by three.
+
+49
+00:04:49.457 --> 00:04:54.512
+The vector p has three rows and one column, so its dimension is three by one.
+
+50
+00:04:55.062 --> 00:05:03.794
+For the product A times p to be computable, the two numbers standing next to each other have to agree. Here they do: in both cases, a three.
+
+51
+00:05:04.394 --> 00:05:07.866
+The result then has dimension four by one.
+
+52
+00:05:08.466 --> 00:05:15.123
+The other way round, the product p times A is not defined. There, a one and a four would stand next to each other.
+
+53
+00:05:19.073 --> 00:05:25.725
+Second: when the objects carry a business meaning, the product can only make sense if those meanings match as well.
+
+54
+00:05:26.275 --> 00:05:33.541
+The columns of the left object must have the same meaning as the rows of the right object. Here, in both cases, the products.
+
+55
+00:05:34.241 --> 00:05:40.096
+And the rows of the left object have the same meaning as the rows of the result. Here, the customers.
+
+56
+00:05:43.646 --> 00:05:52.785
+Third: before you set up a matrix operation, always think about the content first, and ask which elementary steps lead to the result you are looking for.
+
+57
+00:05:54.535 --> 00:05:59.698
+In our example, that was: quantity bought times price, summed over the products.
+
+58
+00:06:01.398 --> 00:06:09.870
+Only afterwards do you ask which matrix operation represents exactly that calculation. Here, it is A times p.
+
+59
+00:06:10.370 --> 00:06:16.762
+Only in this order can you be sure that the operation makes sense and that the result is interpreted correctly.
+
+60
+00:06:19.512 --> 00:06:23.446
+Matrix algebra becomes really helpful once the dimensions get large.
+
+61
+00:06:24.096 --> 00:06:33.564
+Our example is deliberately tiny. Real companies have far more products and far more customers, and they have to run calculations like these often and quickly.
+
+62
+00:06:34.164 --> 00:06:40.212
+Matrix operations are then usually much more sensible than listing one individual calculation after another. They have three advantages.
+
+63
+00:06:41.962 --> 00:06:45.948
+They can be written down compactly, here simply as A times p.
+
+64
+00:06:47.598 --> 00:06:57.586
+They are easier to hand over to a computer than the individual calculations, for example in Excel, or for larger data sets in R, MATLAB or Python with NumPy.
+
+65
+00:06:59.236 --> 00:07:03.790
+And they can be applied efficiently to many data sets at once, and automated.
+
+66
+00:07:07.740 --> 00:07:14.690
+Matrices and vectors bundle business data: here the quantities in the matrix A and the prices in the vector p.
+
+67
+00:07:16.490 --> 00:07:25.126
+The matrix-vector product A times p gives the revenue per customer in a single step, and it stays readable as products and customers grow in number.
+
+68
+00:07:26.926 --> 00:07:33.531
+And worth remembering: with matrix operations, check the dimensions first, then the meaning of the rows and columns.

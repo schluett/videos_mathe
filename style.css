@@ -63,6 +63,40 @@ p {
   color: var(--muted);
 }
 
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-size: .92rem;
+}
+
+.lang-switch .lang-label {
+  color: var(--muted);
+}
+
+.lang-switch a, .lang-switch span {
+  border: 1px solid var(--grid);
+  border-radius: 999px;
+  padding: 2px 11px;
+  background: var(--card);
+  text-decoration: none;
+}
+
+.lang-switch .is-current {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .topic-section {
   margin: 28px 0 46px;
 }
