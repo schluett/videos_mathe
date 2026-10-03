@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix Algebra in Business – Entries and Formal Notation</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">All videos</a>
+      ·
+      <a href="../index.html">Matrix Algebra</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Language:</span><a lang="de" href="../../../matrixrechnung/2_notation/index.html">Deutsch</a><span class="is-current" lang="en">English</span></div>
+  </div>
+  <h1>Notation for Matrices and Vectors</h1>
+  <p>Entries, indices and the summation sign</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/1e8a755aebc14289bf53/?op=view">
+      <track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English"><track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters" default>
+      Your browser does not support the video element.
+    </video>
+  </div>
+
+  <h2>Chapters</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Introduction and learning goals</span></button><button class="chapter-button" type="button" data-start="40.737"><span class="chapter-time">00:41</span><span>Entries of a matrix</span></button><button class="chapter-button" type="button" data-start="105.418"><span class="chapter-time">01:45</span><span>Two reading exercises</span></button><button class="chapter-button" type="button" data-start="174.258"><span class="chapter-time">02:54</span><span>Entries of a vector</span></button><button class="chapter-button" type="button" data-start="212.782"><span class="chapter-time">03:33</span><span>The summation sign</span></button><button class="chapter-button" type="button" data-start="293.770"><span class="chapter-time">04:54</span><span>The general entry</span></button><button class="chapter-button" type="button" data-start="331.225"><span class="chapter-time">05:31</span><span>Summary</span></button></div>
+
+  <section class="license-box"><h2>License</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p><p><strong>Icons:</strong> <a href="https://openmoji.org/">OpenMoji</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Black SVG icons recolored and scaled</p></section>
+
+  <div class="pager">
+    <a href="../1_introduction/index.html">← Introduction to Matrix Algebra</a>
+    <a href="../3_operations/index.html">Working with Matrices →</a>
+  </div>
+</main>
+<footer>Matrix Algebra in Business – Entries and Formal Notation</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

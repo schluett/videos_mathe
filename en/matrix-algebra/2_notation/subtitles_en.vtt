@@ -1,0 +1,197 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:05.863
+In the first video of this series, we saw what matrix algebra is good for in business.
+
+2
+00:00:06.663 --> 00:00:14.777
+This video is about notation: how do we refer to a single entry of a matrix, and how do we write the matrix-vector product formally?
+
+3
+00:00:16.777 --> 00:00:19.743
+The learning goals of this video are the following.
+
+4
+00:00:21.443 --> 00:00:25.091
+First: to read off the entries of a matrix.
+
+5
+00:00:26.741 --> 00:00:30.131
+Second: to read off the entries of a vector.
+
+6
+00:00:31.781 --> 00:00:38.087
+And third: to write the matrix-vector product formally, using the summation sign.
+
+7
+00:00:40.737 --> 00:00:43.326
+Let us look at the café example once more.
+
+8
+00:00:43.926 --> 00:00:50.922
+The rows hold Anna, Ben, Clara and David, and the columns hold coffee, cake and juice.
+
+9
+00:00:52.772 --> 00:00:57.397
+As in the first video, a capital letter denotes the whole matrix. Our matrix is called A.
+
+10
+00:00:57.997 --> 00:01:03.641
+To refer to a single value inside the matrix, we use the lower-case letter of the same name.
+
+11
+00:01:04.191 --> 00:01:09.037
+Two numbers are then written at the bottom right of that letter, in what we call the index.
+
+12
+00:01:09.587 --> 00:01:12.624
+The common notation is a_ij.
+
+13
+00:01:13.224 --> 00:01:17.029
+Here i, the first index, always stands for the row.
+
+14
+00:01:17.579 --> 00:01:21.740
+And j, the second index, always stands for the column.
+
+15
+00:01:22.340 --> 00:01:26.882
+You can remember it like a seat in a cinema: first the row, then the seat.
+
+16
+00:01:28.732 --> 00:01:35.730
+When the index contains actual numbers, we add a comma for readability and write, for example, a_2,3.
+
+17
+00:01:36.280 --> 00:01:42.718
+For general indices, on the other hand, we leave the comma out and simply write a_ij.
+
+18
+00:01:45.418 --> 00:01:49.901
+Let us practise reading entries with two examples.
+
+19
+00:01:50.451 --> 00:01:53.624
+What is the value of the element a_2,3?
+
+20
+00:01:56.824 --> 00:02:04.311
+The first index is a two, so we look at the second row. The second index is a three, so we look at the third column.
+
+21
+00:02:04.861 --> 00:02:11.376
+There we find a three. So a_2,3 equals three means: Ben bought three juices.
+
+22
+00:02:13.376 --> 00:02:16.285
+And what is the value of a_4,2?
+
+23
+00:02:19.485 --> 00:02:25.857
+Fourth row, second column: there we find a one. David bought one slice of cake.
+
+24
+00:02:27.757 --> 00:02:33.478
+The two indices may only go as far as the matrix actually has rows and columns.
+
+25
+00:02:34.028 --> 00:02:43.628
+Our matrix has the dimension 4 x 3. So i can take the values one to four, and j the values one to three.
+
+26
+00:02:44.178 --> 00:02:51.558
+An element a_5,1 does not exist here, because the matrix has no fifth row.
+
+27
+00:02:54.258 --> 00:03:01.217
+The same principle of indexing applies to vectors. From our example we already know the price vector p.
+
+28
+00:03:01.817 --> 00:03:08.949
+For vectors we usually use just one index. p_j denotes the j-th entry of the vector p.
+
+29
+00:03:09.549 --> 00:03:15.938
+Since a vector is written with a lower-case letter anyway, it is the index alone that marks out a single entry.
+
+30
+00:03:16.588 --> 00:03:20.320
+p_1 equals three is the price of a coffee.
+
+31
+00:03:20.820 --> 00:03:25.471
+p_2 equals five is the price of a slice of cake.
+
+32
+00:03:25.971 --> 00:03:30.082
+And p_3 equals two is the price of a juice.
+
+33
+00:03:32.782 --> 00:03:39.100
+Now to the third learning goal: the formal notation for the product of a matrix and a vector.
+
+34
+00:03:39.700 --> 00:03:46.468
+For that we need the summation sign, which will become relevant again later in financial mathematics.
+
+35
+00:03:47.118 --> 00:03:54.100
+In the first video we tipped the vector over the first row of the matrix and multiplied the numbers that sat above one another.
+
+36
+00:03:54.700 --> 00:04:03.400
+With numbers, the calculation reads: two times three, plus one times five, plus zero times two, equals eleven.
+
+37
+00:04:03.950 --> 00:04:13.427
+Written with symbols, that is a_1,1 times p_1, plus a_1,2 times p_2, plus a_1,3 times p_3.
+
+38
+00:04:14.127 --> 00:04:20.998
+Each of these products has the same structure: a_1,j times p_j, where j runs from one to three.
+
+39
+00:04:21.698 --> 00:04:26.732
+To add up terms like these, we use the summation sign, a capital sigma.
+
+40
+00:04:27.232 --> 00:04:35.745
+Below the sigma we write the running index with its starting value, here j equals one, and above it the final value, here three.
+
+41
+00:04:36.345 --> 00:04:41.161
+And after it comes the term that is formed for every j and then added up.
+
+42
+00:04:41.761 --> 00:04:51.020
+This sum is exactly the calculation from before, and it gives eleven. That is the revenue with Anna, and so the first entry of the result.
+
+43
+00:04:53.770 --> 00:05:01.692
+So far we have only looked at the first row. For an arbitrary row, we replace the one in the first index by an i.
+
+44
+00:05:02.292 --> 00:05:07.737
+With two letters in the index, we leave the comma out again and write a_ij.
+
+45
+00:05:08.337 --> 00:05:16.506
+We call the result vector r, for revenue. Its i-th entry r_i is the revenue with customer number i.
+
+46
+00:05:17.106 --> 00:05:28.425
+That puts the whole calculation on a single line: r_i equals the sum over j from one to three of a_ij times p_j, for i from one to four.
+
+47
+00:05:32.425 --> 00:05:46.256
+The individual entries of a matrix are addressed through a double index. The first index stands for the row, the second one for the column.
+
+48
+00:05:48.106 --> 00:05:51.246
+For vectors we usually use just one index.
+
+49
+00:05:53.046 --> 00:05:58.087
+The product of a matrix and a vector is a vector. The entries of that vector can be written down and computed with the summation sign.

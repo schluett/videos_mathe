@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix Algebra in Business – Sum, Difference and Scalar Multiple of Matrices</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">All videos</a>
+      ·
+      <a href="../index.html">Matrix Algebra</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Language:</span><a lang="de" href="../../../matrixrechnung/3_rechenregeln/index.html">Deutsch</a><span class="is-current" lang="en">English</span></div>
+  </div>
+  <h1>Working with Matrices</h1>
+  <p>Sum, difference and scalar multiple</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/51e5f683c8d8414598c7/?op=view">
+      <track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English"><track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters" default>
+      Your browser does not support the video element.
+    </video>
+  </div>
+
+  <h2>Chapters</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Introduction and addition</span></button><button class="chapter-button" type="button" data-start="111.662"><span class="chapter-time">01:52</span><span>Conditions for the sum</span></button><button class="chapter-button" type="button" data-start="169.788"><span class="chapter-time">02:50</span><span>Subtraction and scalar multiplication</span></button><button class="chapter-button" type="button" data-start="295.664"><span class="chapter-time">04:56</span><span>Two ways to calculate</span></button><button class="chapter-button" type="button" data-start="401.902"><span class="chapter-time">06:42</span><span>The distributive law</span></button><button class="chapter-button" type="button" data-start="470.642"><span class="chapter-time">07:51</span><span>Summary</span></button></div>
+
+  <section class="license-box"><h2>License</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p><p><strong>Icons:</strong> <a href="https://openmoji.org/">OpenMoji</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Black SVG icons recolored and scaled</p></section>
+
+  <div class="pager">
+    <a href="../2_notation/index.html">← Notation for Matrices and Vectors</a>
+    <a href="../4_production_planning/index.html">Production Planning with Matrices →</a>
+  </div>
+</main>
+<footer>Matrix Algebra in Business – Sum, Difference and Scalar Multiple of Matrices</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

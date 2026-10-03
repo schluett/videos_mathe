@@ -1,0 +1,249 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:09.807
+Data tables do not always come in the form we need for a calculation. In this video we will see how to move between two arrangements of the same data.
+
+2
+00:00:11.707 --> 00:00:15.024
+The learning goals of this video are the following.
+
+3
+00:00:16.724 --> 00:00:20.823
+First: to form the transpose of a matrix and interpret it.
+
+4
+00:00:22.473 --> 00:00:27.529
+Second: to recognise how dimensions and meanings change when we transpose.
+
+5
+00:00:29.179 --> 00:00:35.671
+And third: to set up products with transposed data, and to spot how the order is reversed.
+
+6
+00:00:37.721 --> 00:00:47.714
+For that we return to the café from the first video. The matrix A holds the quantities bought: the customers in the rows, the products in the columns.
+
+7
+00:00:48.414 --> 00:00:59.497
+Together with the price vector p, the matrix-vector product A · p gave the revenue per person: eleven, nine, twelve and eighteen euros.
+
+8
+00:01:01.447 --> 00:01:05.217
+But data tables do not always come in this orientation.
+
+9
+00:01:05.817 --> 00:01:12.319
+An export from the point of sale system may hold the products in the rows and the customers in the columns.
+
+10
+00:01:15.170 --> 00:01:24.130
+These are the same numbers, only arranged differently. That other arrangement is called the transpose of the matrix A; we write A transposed.
+
+11
+00:01:24.730 --> 00:01:28.965
+We obtain A transposed by swapping rows and columns.
+
+12
+00:01:29.515 --> 00:01:33.692
+The first row of A becomes the first column of the new table.
+
+13
+00:01:34.292 --> 00:01:39.147
+The second row becomes the second column, and so on for all four rows.
+
+14
+00:01:39.747 --> 00:01:50.794
+What matters is that the labels travel along: Anna, Ben, Clara and David now sit above the columns, and coffee, cake and juice to the left of the rows.
+
+15
+00:01:51.494 --> 00:01:56.083
+It is the same data. Only the table is oriented the other way round.
+
+16
+00:01:57.933 --> 00:02:04.200
+A had the dimension 4 × 3. A transposed has the dimension 3 × 4.
+
+17
+00:02:04.800 --> 00:02:10.741
+In general, transposing turns an m × n matrix into an n × m matrix.
+
+18
+00:02:12.591 --> 00:02:18.231
+If we transpose the matrix A transposed once more, we are back where we started.
+
+19
+00:02:21.231 --> 00:02:25.757
+A transposed, transposed once more, equals A.
+
+20
+00:02:28.507 --> 00:02:45.127
+As a reminder: A, and likewise A transposed, show the quantities ordered. From those we wanted to work out the revenue per customer. To do that, the quantities had to be multiplied by the price of the product in question, and then added up over all products.
+
+21
+00:02:46.827 --> 00:02:50.906
+Can we manage that with A transposed as well?
+
+22
+00:02:54.506 --> 00:02:57.147
+Here the products sit in the rows.
+
+23
+00:02:58.447 --> 00:03:04.002
+For Anna, two coffees and one slice of cake would have to be multiplied by their prices.
+
+24
+00:03:05.402 --> 00:03:12.307
+We can do that if we multiply the prices, as a row vector, onto A transposed from the left.
+
+25
+00:03:13.007 --> 00:03:16.218
+Let us check briefly that this can work.
+
+26
+00:03:16.718 --> 00:03:27.456
+In terms of format it fits: the row vector has the dimension 1 × 3, A transposed has 3 × 4. So we get an object of dimension 1 × 4.
+
+27
+00:03:28.156 --> 00:03:36.399
+The meanings fit together too: the columns of the left-hand factor are the products, exactly like the rows of the right-hand factor.
+
+28
+00:03:39.199 --> 00:03:56.787
+Let us now compute the product. Starting with the first column of A transposed, that is Anna, her order quantities are laid over the columns of the price vector, multiplied through and added up – the way we have already done it several times to compute a matrix-vector product.
+
+29
+00:03:57.437 --> 00:04:03.424
+That gives a revenue of eleven euros. We write this value into the first column of the result.
+
+30
+00:04:04.074 --> 00:04:10.166
+We carry on with the second column, that is Ben. Here we get a revenue of nine euros.
+
+31
+00:04:10.766 --> 00:04:17.650
+For Clara and David we proceed in the same way. That gives twelve and eighteen euros.
+
+32
+00:04:18.350 --> 00:04:21.759
+The same revenues as in video 1.
+
+33
+00:04:23.509 --> 00:04:37.531
+Would there be other ways to carry out this calculation? Yes: we could transpose A transposed once more and so return to A. Then we can work out the revenues with A times p again, as in the first video.
+
+34
+00:04:38.181 --> 00:04:46.673
+Sometimes that is not what we want, though, above all when A transposed is large and the transposed form is more practical for other purposes.
+
+35
+00:04:48.323 --> 00:04:59.720
+What does not work, however: we cannot multiply A transposed by p. That does not fit in terms of format, and it does not fit in terms of meaning either.
+
+36
+00:05:02.570 --> 00:05:10.428
+We now look at transposing in the matrix-matrix product as well, and return to the example with several production plans.
+
+37
+00:05:11.028 --> 00:05:18.410
+One scenario could be that after a change of software, the matrices A and B now come in transposed form.
+
+38
+00:05:20.160 --> 00:05:32.295
+As a reminder: the requirements matrix A had the raw materials in the rows and the products in the columns. B held the production plans, and A · B gave the raw material requirement per plan.
+
+39
+00:05:33.045 --> 00:05:41.408
+We now look into whether the values from A times B can also be obtained from a product of A transposed and B transposed.
+
+40
+00:05:44.008 --> 00:05:49.522
+If both tables come transposed, we have A transposed with the products in the rows
+
+41
+00:05:50.272 --> 00:05:52.825
+and the raw materials in the columns.
+
+42
+00:05:54.875 --> 00:05:58.802
+In B transposed, the production plans are in the rows
+
+43
+00:05:59.552 --> 00:06:02.523
+and the products in the columns.
+
+44
+00:06:05.273 --> 00:06:15.053
+So which order fits? The dimensions are no help here: all matrices are 3 × 3, so in terms of format both orders would be possible.
+
+45
+00:06:15.903 --> 00:06:18.143
+So the meanings have to decide.
+
+46
+00:06:18.793 --> 00:06:24.464
+In the product A transposed times B transposed, the meanings do not match.
+
+47
+00:06:25.214 --> 00:06:34.218
+In the columns of A transposed they are raw materials; in the rows of B transposed they are production plans.
+
+48
+00:06:34.968 --> 00:06:36.552
+That does not fit together.
+
+49
+00:06:37.702 --> 00:06:44.241
+We have to multiply B transposed from the left onto A transposed. That way the meanings match.
+
+50
+00:06:45.041 --> 00:06:51.780
+Now it fits together. The result has the production plans in the rows and the raw materials in the columns.
+
+51
+00:06:54.580 --> 00:07:00.425
+Let us come back once more, quite practically, to the change of software.
+
+52
+00:07:01.025 --> 00:07:11.686
+In the previous video, with the old software, we had worked out A times B. Here is that result once more: the raw materials were in the rows, the plans in the columns.
+
+53
+00:07:13.386 --> 00:07:26.223
+In this video we have been calculating with the new software, that is, with the transposed matrices. B transposed times A transposed has the production plans in the rows and the raw materials in the columns.
+
+54
+00:07:27.823 --> 00:07:32.522
+Take a moment to compare these two result matrices. What do you notice?
+
+55
+00:07:34.572 --> 00:07:39.733
+The two results hold the same numbers; only rows and columns are swapped.
+
+56
+00:07:40.583 --> 00:07:44.635
+That holds in general too. We can write it down in two forms.
+
+57
+00:07:45.185 --> 00:07:56.540
+We can transpose the left-hand result matrix: (A · B) transposed equals B transposed times A transposed.
+
+58
+00:07:57.390 --> 00:08:09.375
+Or we can transpose the right-hand result matrix: A · B equals (B transposed times A transposed) transposed.
+
+59
+00:08:12.325 --> 00:08:13.319
+In summary.
+
+60
+00:08:14.319 --> 00:08:20.806
+The same data can come in different orientations. Swapping rows and columns is called transposing.
+
+61
+00:08:22.156 --> 00:08:28.904
+If we transpose a matrix or a vector of dimension m × n, we get an object of dimension n × m.
+
+62
+00:08:30.254 --> 00:08:39.217
+In a product, transposing reverses the order: just as we have seen it in the numerical example, it holds in general as a rule of arithmetic.

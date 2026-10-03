@@ -1,0 +1,205 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:10.685
+So far we have met matrices, and we have labelled individual entries with indices. Now we turn to some further basic operations with matrices.
+
+2
+00:00:12.585 --> 00:00:16.295
+The learning goals of this video are the following.
+
+3
+00:00:17.995 --> 00:00:21.016
+First: to add and subtract matrices.
+
+4
+00:00:22.666 --> 00:00:26.645
+Second: to multiply a matrix by a number.
+
+5
+00:00:28.295 --> 00:00:35.048
+And third: to check the conditions for meaningful matrix operations, and to apply the distributive law.
+
+6
+00:00:37.098 --> 00:00:49.602
+We stay with the café example. The matrix A describes the quantities that Anna, Ben, Clara and David bought on the first day; the prices are still held in the vector p.
+
+7
+00:00:51.302 --> 00:00:57.001
+Now a second day comes along. The matrix B holds the quantities of that second day.
+
+8
+00:00:57.601 --> 00:01:06.254
+Rows, columns and unit are the same as in A: the same customers, the same products, and quantities in both cases.
+
+9
+00:01:08.004 --> 00:01:13.162
+What interests us is how much each person bought on the two days together.
+
+10
+00:01:13.762 --> 00:01:25.143
+For Anna and coffee, that is two on the first day and one on the second day, so three altogether. For Ben and juice, three plus zero, which is three as well.
+
+11
+00:01:25.743 --> 00:01:31.533
+Every other entry comes about in the same way. We call the result matrix C.
+
+12
+00:01:33.233 --> 00:01:44.713
+In the last video we learned to label individual entries with two indices. That lets us state this rule in general: c_ij comes from a_ij plus b_ij.
+
+13
+00:01:45.313 --> 00:01:48.862
+So the addition is carried out entry by entry.
+
+14
+00:01:51.662 --> 00:01:57.922
+For the sum of two matrices to exist at all, both of them must have the same dimension.
+
+15
+00:01:58.522 --> 00:02:06.416
+A and B are both 4 x 3. The addition is therefore defined, and C has the dimension 4 x 3 as well.
+
+16
+00:02:07.016 --> 00:02:15.525
+For the matrix-vector product, only the inner dimensions had to match. For the addition, both dimensions have to agree completely.
+
+17
+00:02:17.375 --> 00:02:22.627
+In a business application, however, the same dimension on its own is not enough.
+
+18
+00:02:23.227 --> 00:02:35.239
+The meaning of the corresponding entries should match as well: the same customers in the rows, the same products in the columns, and quantities in both matrices.
+
+19
+00:02:35.939 --> 00:02:46.988
+Formally, we could also add two matrices of the same size whose entries stand for completely different things. But the result might then have no meaningful business interpretation.
+
+20
+00:02:49.788 --> 00:02:59.825
+Let us now also take into account that some items were returned. The matrix R holds the quantities that were returned from the two days we are looking at.
+
+21
+00:03:00.475 --> 00:03:09.136
+Ben returned one juice: three minus one gives two. Clara returned one coffee: one minus one gives zero.
+
+22
+00:03:09.736 --> 00:03:17.131
+The remaining entries stay unchanged, because there were no returns there. We call the result matrix D.
+
+23
+00:03:17.831 --> 00:03:30.232
+The entries of D are computed as d_ij equals c_ij minus r_ij. Subtraction, too, is carried out entry by entry.
+
+24
+00:03:30.932 --> 00:03:42.980
+No entry of D is negative. Negative values would be mathematically possible, but here they would mean that more items were returned than were bought. That would be a sign of inconsistent data.
+
+25
+00:03:45.430 --> 00:03:57.536
+We now come to scalar multiplication. In matrix algebra, a single number is called a scalar. In a scalar multiplication, a number is multiplied by a matrix.
+
+26
+00:03:58.236 --> 00:04:11.469
+As an example, suppose that in a comparable later period every one of these quantities is exactly twice as high as in the matrix C. So here we carry out a scalar multiplication of the matrix C with the scalar 2.
+
+27
+00:04:12.169 --> 00:04:18.746
+To do that, every entry of C is multiplied by 2: 3 becomes 6, and 1 becomes 2.
+
+28
+00:04:19.346 --> 00:04:21.605
+We call the result matrix E.
+
+29
+00:04:23.455 --> 00:04:33.211
+Scalar multiplication is carried out entry by entry as well. Here we can write: e_ij equals 2 times c_ij.
+
+30
+00:04:33.911 --> 00:04:41.984
+The factor 2 is only an example here. In a scalar multiplication, any other number could be used as the scalar.
+
+31
+00:04:43.934 --> 00:04:52.864
+Addition, subtraction and scalar multiplication therefore have something in common: they are all carried out entry by entry.
+
+32
+00:04:55.664 --> 00:05:06.664
+We now look at a calculation that contains both a matrix sum and a matrix-vector product. We will see that there are two ways to get there, and that both lead to the same result.
+
+33
+00:05:07.364 --> 00:05:17.970
+On the left-hand side we first add A and B to get the matrix C. Then we value C with the prices: that is, we carry out the matrix-vector product.
+
+34
+00:05:18.570 --> 00:05:24.015
+To do that, we tip the entries of the price vector over the matrix of quantities.
+
+35
+00:05:24.615 --> 00:05:37.863
+For the first entry we get: 3 cups of coffee times 3 euros, plus 1 slice of cake times 5 euros, plus 2 glasses of juice times 2 euros. Together that is 18 euros.
+
+36
+00:05:39.813 --> 00:05:53.595
+The remaining rows are multiplied by the price vector in just the same way. Since the rows of the matrix C stand for the four customers, the four values in the result vector tell us the revenue per customer across both days.
+
+37
+00:05:55.795 --> 00:06:03.668
+On the right-hand side we go about it differently. We first multiply A and B separately by the price vector p.
+
+38
+00:06:04.618 --> 00:06:14.060
+For A · p we get the vector 11, 9, 12 and 18. For B · p the vector 7, 11, 10 and 12.
+
+39
+00:06:14.860 --> 00:06:24.800
+These intermediate results carry a meaning: A · p gives the revenue per customer on the first day, and B · p the revenue per customer on the second day.
+
+40
+00:06:25.650 --> 00:06:38.952
+The revenues can be added across the two days. In total we get the same vector as in the calculation on the left: again the overall revenue across both days, but separately for Anna, Ben, Clara and David.
+
+41
+00:06:41.902 --> 00:06:48.874
+What we have just seen also corresponds to a general rule of arithmetic, namely the distributive law.
+
+42
+00:06:49.574 --> 00:06:57.481
+The distributive law is probably familiar from school for ordinary numbers, and it holds here in matrix algebra as well.
+
+43
+00:06:58.181 --> 00:07:08.979
+With the names used here, the distributive law reads: (A + B) · p equals A · p plus B · p.
+
+44
+00:07:09.729 --> 00:07:18.915
+The condition is that the dimensions match. That means: A and B must have the same dimension, and each of them must have as many columns as p has entries.
+
+45
+00:07:20.815 --> 00:07:32.626
+On the left-hand side, then, the matrix sum is formed first. On the right-hand side, each matrix is multiplied by the vector p, and only then are the results added.
+
+46
+00:07:33.426 --> 00:07:41.163
+In business terms that means: we can first add up the quantities of both days and then value the result with the prices.
+
+47
+00:07:41.813 --> 00:07:47.792
+Or we value each day on its own and add the revenues afterwards. Both routes lead to the same result.
+
+48
+00:07:51.842 --> 00:07:56.686
+Matrices of the same dimension are added and subtracted entry by entry.
+
+49
+00:07:58.536 --> 00:08:02.643
+Multiplying a matrix by a number is also done entry by entry.
+
+50
+00:08:03.293 --> 00:08:09.309
+In applications, besides the dimensions, the meaning and the unit of the entries have to be checked as well.
+
+51
+00:08:11.209 --> 00:08:20.094
+And the distributive law holds in matrix algebra too, provided the dimensions match so that the calculation is defined.

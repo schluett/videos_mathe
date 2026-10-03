@@ -1,0 +1,189 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:07.810
+This video uses a second application to show how a business question is translated into a matrix operation.
+
+2
+00:00:08.510 --> 00:00:17.850
+As in the café example, here too we first think through the right calculation in business terms, and then develop the matrix operation that matches it.
+
+3
+00:00:19.850 --> 00:00:22.330
+The learning goals of this video are the following.
+
+4
+00:00:24.030 --> 00:00:28.170
+First: to translate a business question into a matrix operation.
+
+5
+00:00:29.820 --> 00:00:35.178
+Second: to recognise which quantities belong in the matrix and which belong in the vector.
+
+6
+00:00:36.828 --> 00:00:41.764
+And third: to interpret the result of a matrix-vector product in business terms.
+
+7
+00:00:44.414 --> 00:00:51.604
+Imagine a small ice cream workshop that makes three kinds: soft serve, sundaes and sorbet.
+
+8
+00:00:52.204 --> 00:00:55.296
+Production runs in batches of five litres each.
+
+9
+00:00:57.096 --> 00:01:03.717
+Three raw materials are needed for that: milk in litres, fruit in kilograms and chocolate in bars.
+
+10
+00:01:05.917 --> 00:01:14.901
+How much of each raw material one batch needs is shown in this table: the raw materials in the rows, the products in the columns.
+
+11
+00:01:15.501 --> 00:01:22.485
+One batch of soft serve needs four litres of milk, one kilogram of fruit and two bars of chocolate.
+
+12
+00:01:23.035 --> 00:01:29.999
+For one batch of sundaes it is five litres of milk, two kilograms of fruit and three bars of chocolate.
+
+13
+00:01:30.549 --> 00:01:37.465
+The sorbet, on the other hand, needs no milk and no chocolate at all. It only needs six kilograms of fruit.
+
+14
+00:01:38.015 --> 00:01:43.803
+So the two zeros show that these raw materials do not go into the sorbet at all.
+
+15
+00:01:45.703 --> 00:01:55.571
+For the coming week, the following production plan is scheduled: ten batches of soft serve, six batches of sundaes and four batches of sorbet.
+
+16
+00:01:56.171 --> 00:01:59.460
+How much of each raw material is needed in total for that?
+
+17
+00:02:02.160 --> 00:02:12.853
+Let us first work that out in a completely elementary way: for each raw material, the amount needed per batch times the number of batches, summed over the three kinds.
+
+18
+00:02:13.453 --> 00:02:17.070
+For the milk: four litres times ten batches of soft serve.
+
+19
+00:02:17.520 --> 00:02:21.161
+Plus five litres times six batches of sundaes.
+
+20
+00:02:21.611 --> 00:02:25.709
+The sorbet needs no milk, so zero times four.
+
+21
+00:02:26.159 --> 00:02:31.560
+Together that is forty plus thirty plus zero, so seventy litres of milk.
+
+22
+00:02:32.210 --> 00:02:41.480
+For the fruit we get: one kilogram times ten, plus two times six, plus six times four. That is forty-six kilograms.
+
+23
+00:02:42.080 --> 00:02:49.935
+And for the chocolate: two times ten, plus three times six, plus zero times four. That is thirty-eight bars.
+
+24
+00:02:52.635 --> 00:03:00.867
+How can we turn this into a matrix operation? To find out, let us look at the three lines of the calculation more closely.
+
+25
+00:03:01.467 --> 00:03:09.266
+The production quantities ten, six and four show up again in every line, always the same factors in the same place.
+
+26
+00:03:09.866 --> 00:03:16.193
+The amounts needed, on the other hand, differ: for each product and each raw material there is a different number.
+
+27
+00:03:18.093 --> 00:03:27.396
+So the amounts needed depend on two characteristics, on the raw material and on the product. Quantities like these belong in a matrix.
+
+28
+00:03:27.996 --> 00:03:32.711
+The production quantities depend on only one characteristic, on the product. They form a vector.
+
+29
+00:03:34.861 --> 00:03:45.888
+We can represent this calculation as a matrix operation if we multiply a matrix holding the amounts needed, on the left, by a vector holding the production quantities, on the right.
+
+30
+00:03:46.588 --> 00:03:53.896
+The meanings fit together correctly when the columns of the matrix hold the products, in the same order as in the column vector.
+
+31
+00:03:54.546 --> 00:04:00.581
+The rows of the matrix then stand for the raw materials, and so do the rows of the result.
+
+32
+00:04:01.181 --> 00:04:06.165
+We call the requirements matrix A, and the production plan x.
+
+33
+00:04:08.865 --> 00:04:12.677
+Now we compute the product A times x.
+
+34
+00:04:13.277 --> 00:04:20.014
+As in the introductory video, the column vector is tipped onto its side and laid over the first row of the matrix.
+
+35
+00:04:20.614 --> 00:04:27.718
+The numbers that sit above one another are multiplied and then added: forty plus thirty plus zero gives seventy.
+
+36
+00:04:28.268 --> 00:04:32.784
+Seventy litres of milk: that is the first entry of the result.
+
+37
+00:04:33.434 --> 00:04:38.739
+Now the tipped vector moves down one row. For the fruit we get forty-six.
+
+38
+00:04:39.339 --> 00:04:41.768
+And in the third row, for the chocolate, thirty-eight.
+
+39
+00:04:42.418 --> 00:04:51.486
+The result is the raw material requirement for the whole production plan: seventy litres of milk, forty-six kilograms of fruit and thirty-eight bars of chocolate.
+
+40
+00:04:54.236 --> 00:05:02.026
+Let us compare the first row once more with what we worked out at the start.
+
+41
+00:05:02.576 --> 00:05:07.727
+It is exactly the same calculation. The matrix-vector product only gathers together what we wrote down separately before.
+
+42
+00:05:09.877 --> 00:05:12.889
+Briefly, the two checks from the introductory video.
+
+43
+00:05:13.389 --> 00:05:21.850
+The dimensions: A is three by three, x is three by one. The two inner numbers agree, and the result is three by one.
+
+44
+00:05:22.400 --> 00:05:32.888
+And the meanings: the columns of A and the rows of x are the products in both cases, while the rows of A and the rows of the result are the raw materials.
+
+45
+00:05:36.838 --> 00:05:43.949
+Whatever depends on two characteristics, here on the raw material and on the product, belongs in the matrix. The recurring factors form the vector.
+
+46
+00:05:45.749 --> 00:05:56.629
+The matrix-vector product A times x then gives the raw material requirement of a whole production plan in a single step.
+
+47
+00:05:58.429 --> 00:06:05.184
+The next step would be to look at several production plans at once. That leads to the product of two matrices.

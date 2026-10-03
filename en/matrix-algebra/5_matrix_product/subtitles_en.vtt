@@ -1,0 +1,265 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:17.306
+This video shows how several production plans can be evaluated at once using matrix algebra. In the last video we used a matrix-vector product to work out the total raw material requirement for one production plan. Now we look at several production plans at the same time.
+
+2
+00:00:19.256 --> 00:00:22.112
+The learning goals of this video are the following.
+
+3
+00:00:23.812 --> 00:00:29.881
+First: to gather several production vectors, column by column, into one matrix.
+
+4
+00:00:31.531 --> 00:00:38.270
+Second: to understand a matrix-matrix product as several matrix-vector products at once.
+
+5
+00:00:39.920 --> 00:00:45.120
+And third: to check the dimensions and the meaning of a matrix-matrix product.
+
+6
+00:00:47.170 --> 00:01:01.042
+We stay with the ice cream workshop. The matrix A still holds the raw material requirement per batch: the raw materials in the rows, the products in the columns. This arrangement stays the same throughout the example.
+
+7
+00:01:01.742 --> 00:01:11.465
+In the last video we looked at a vector x that says what quantity of each kind of ice cream is to be produced, in other words the production plan.
+
+8
+00:01:11.865 --> 00:01:19.939
+We now call this vector x^(1). The one in the raised index is not a power; it is used for numbering.
+
+9
+00:01:20.439 --> 00:01:24.217
+The production plan holds the same quantities as in the last video.
+
+10
+00:01:24.767 --> 00:01:30.863
+The product A · x^(1) gives the raw material requirement for carrying out the production plan.
+
+11
+00:01:31.463 --> 00:01:38.330
+The result was seventy litres of milk, forty-six kilograms of fruit and thirty-eight bars of chocolate.
+
+12
+00:01:41.130 --> 00:01:48.235
+Now suppose we want to look not at one production plan but at three different ones, for three consecutive weeks, say.
+
+13
+00:01:48.835 --> 00:02:05.192
+Each of these vectors describes one complete production plan. In all three vectors, its three entries stand in the same order for soft serve, sundaes and sorbet. So the position of an entry carries the same meaning in all three vectors.
+
+14
+00:02:05.892 --> 00:02:15.574
+The raised index in brackets numbers whole production plans, not individual entries. A single entry would get a lowered index, as in the second video.
+
+15
+00:02:17.424 --> 00:02:22.903
+How can we work out the raw material requirement for all three production plans together?
+
+16
+00:02:23.853 --> 00:02:28.973
+We could compute a matrix-vector product separately for each production plan.
+
+17
+00:02:29.973 --> 00:02:36.528
+That would be correct, but it would write the same calculation step down three separate times.
+
+18
+00:02:37.028 --> 00:02:43.499
+And notice: the requirements matrix A stays the same every time.
+
+19
+00:02:44.399 --> 00:02:46.660
+Only the production vector changes.
+
+20
+00:02:48.060 --> 00:02:52.859
+It is exactly this repetition that we now want to bundle into a single calculation.
+
+21
+00:02:54.659 --> 00:02:59.502
+We can gather the three production vectors column by column into one matrix.
+
+22
+00:03:00.602 --> 00:03:02.810
+We call this matrix B.
+
+23
+00:03:03.610 --> 00:03:06.497
+Each of the earlier vectors is one column of B.
+
+24
+00:03:07.547 --> 00:03:12.848
+As in the production vectors before, the rows of B stand for the three kinds of ice cream.
+
+25
+00:03:13.948 --> 00:03:25.754
+So every entry of B depends on two characteristics: on the product and on the production plan. That is exactly why B is a matrix and not a vector.
+
+26
+00:03:28.604 --> 00:03:44.590
+Instead of computing three separate matrix-vector products, we can multiply the requirements matrix A directly by the matrix B of production plans. So the right-hand matrix bundles exactly the three vectors we would otherwise insert one after another.
+
+27
+00:03:45.290 --> 00:03:56.763
+We can understand the matrix-matrix product here as several matrix-vector products at once. Every column of B is treated just like the single production vector from the last video.
+
+28
+00:03:57.263 --> 00:04:02.131
+The vertical bars in the formula: they are simply there to separate the columns.
+
+29
+00:04:03.131 --> 00:04:06.878
+A · B is a matrix with three columns here.
+
+30
+00:04:07.478 --> 00:04:11.933
+To work out the result, A is first multiplied by the first column of B.
+
+31
+00:04:12.533 --> 00:04:17.248
+We write the result of that as the first column of the result matrix.
+
+32
+00:04:17.848 --> 00:04:21.610
+Next, A is multiplied by the second column of B.
+
+33
+00:04:22.210 --> 00:04:26.127
+We write this result as the second column of the result matrix.
+
+34
+00:04:26.727 --> 00:04:32.734
+Finally, A is multiplied by the third column of B, and that result is written as the third column.
+
+35
+00:04:35.584 --> 00:04:40.216
+Let us now work out the first entry of the result matrix in detail.
+
+36
+00:04:40.816 --> 00:04:52.864
+For that we look at the first row of A and the first column of B. We set the column of B upright above the row of A: the topmost entry above the left column, the bottom one above the right.
+
+37
+00:04:53.364 --> 00:05:03.074
+So the scheme is exactly the one from the matrix-vector product. Four times ten, plus five times six, plus zero times four gives seventy.
+
+38
+00:05:03.724 --> 00:05:08.393
+That is seventy litres of milk for the first production plan.
+
+39
+00:05:10.293 --> 00:05:17.454
+To work out entry two, one of the result matrix, we look at the second row of A and still at the first column of B.
+
+40
+00:05:18.154 --> 00:05:24.884
+One times ten, plus two times six, plus six times four gives forty-six.
+
+41
+00:05:25.534 --> 00:05:30.152
+That is forty-six kilograms of fruit for the first production plan.
+
+42
+00:05:32.052 --> 00:05:37.341
+As a third example, let us work out entry one, two of the result matrix.
+
+43
+00:05:38.291 --> 00:05:41.706
+For that we again take the first row of A.
+
+44
+00:05:42.556 --> 00:05:44.836
+But now the second column of B.
+
+45
+00:05:46.536 --> 00:05:52.008
+Four times eight, plus five times ten, plus zero times five gives eighty-two.
+
+46
+00:05:52.658 --> 00:05:57.055
+That is eighty-two litres of milk for the second production plan.
+
+47
+00:05:57.805 --> 00:06:09.010
+This principle holds for every entry of the result matrix: the row of the left-hand matrix determines the raw material, and the column of the right-hand matrix determines the production plan.
+
+48
+00:06:11.860 --> 00:06:15.337
+The remaining entries come about in the same pattern.
+
+49
+00:06:16.787 --> 00:06:22.104
+As the last step of this calculation, we should label the result matrix.
+
+50
+00:06:22.604 --> 00:06:30.170
+The rows of the result always carry the same meaning as the rows of the left-hand matrix, so here the raw materials.
+
+51
+00:06:31.270 --> 00:06:38.799
+The columns of the result always carry the same meaning as the columns of the right-hand matrix, so here the production plans.
+
+52
+00:06:41.499 --> 00:06:55.382
+A matrix-matrix product comes with conditions, just as the matrix-vector product did: first, whether it can be computed at all in terms of format, and second, whether it can make sense in terms of content.
+
+53
+00:06:56.132 --> 00:07:02.411
+For the format we look at the dimensions here. A has three rows and three columns.
+
+54
+00:07:03.261 --> 00:07:06.832
+B also has three rows and three columns.
+
+55
+00:07:07.682 --> 00:07:13.369
+The two inner numbers agree, so the format here is suitable for the multiplication.
+
+56
+00:07:14.069 --> 00:07:17.266
+The outer numbers determine the dimension of the result.
+
+57
+00:07:17.766 --> 00:07:22.103
+The result matrix has three rows and three columns.
+
+58
+00:07:24.903 --> 00:07:39.306
+In general, an m × n matrix can be multiplied by an n × r matrix. The result is then an m × r matrix. Here m and r may differ; only the two inner dimension numbers n have to agree.
+
+59
+00:07:41.506 --> 00:07:53.897
+That settles the question of format. The second condition concerns the content: the meanings have to fit together as well. This check is the content-side counterpart of the matching inner dimensions.
+
+60
+00:07:54.597 --> 00:08:05.104
+The columns of A stand for the products, and the rows of B stand for the products as well. It is exactly this shared meaning that links the two inner dimensions.
+
+61
+00:08:05.804 --> 00:08:12.820
+The rows of the left-hand matrix A become the rows of the result, so here the raw materials.
+
+62
+00:08:13.470 --> 00:08:26.071
+And the columns of the right-hand matrix B become the columns of the result, here the production plans. So both the dimensions and the meanings of the result can be read off directly from the two factors.
+
+63
+00:08:29.871 --> 00:08:40.561
+In a matrix-matrix product we look at the right-hand matrix column by column.
+
+64
+00:08:41.561 --> 00:08:46.621
+With every column of the right-hand matrix, one matrix-vector product is formed.
+
+65
+00:08:47.621 --> 00:08:52.741
+The result matrix here shows the raw material requirements of the different production plans.
+
+66
+00:08:53.341 --> 00:08:59.448
+So the matrix-matrix product extends the idea of the matrix-vector product: instead of evaluating just one production plan, we can process several production plans at the same time.
