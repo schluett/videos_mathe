@@ -25,8 +25,8 @@ const I18N = {
     phaseBackward: "Rückwärtselimination",
     pivotGoal: col => `Pivot in Spalte ${col} festlegen`,
     pivotPrompt: "Welche Zeilenoperation ist hier am günstigsten?",
-    pivotExplanation: (label, value) => `An der nächsten Pivotposition benötigen wir einen möglichst einfachen Eintrag ungleich 0. Durch ${label} gelangt ${value} an diese Position.`,
-    pivotWrong: (row, col, label) => `Entscheidend ist jetzt die Pivotposition in Zeile ${row}, Spalte ${col}. Der beste Schritt bringt dort einen einfachen Eintrag ungleich 0 hin; ${label} erledigt das unmittelbar.`,
+    pivotExplanation: (label, value) => `An der aktuellen Pivotposition steht 0. Deshalb muss eine Zeile mit einem von 0 verschiedenen Eintrag an diese Position getauscht werden. Durch ${label} gelangt ${value} dorthin.`,
+    pivotWrong: (row, col, label) => `An der Pivotposition in Zeile ${row}, Spalte ${col} steht 0. Erst deshalb ist ein Zeilentausch nötig; ${label} bringt einen von 0 verschiedenen Eintrag an diese Position.`,
     normalizeGoal: col => `Pivot in Spalte ${col} auf 1 normieren`,
     normalizePrompt: "Welcher Schritt erzeugt an der Pivotposition eine 1?",
     normalizeExplanation: (pivot, factor) => `Der aktuelle Pivot ist ${pivot}. Die Multiplikation mit dem Kehrwert ${factor} macht daraus genau 1.`,
@@ -74,8 +74,8 @@ const I18N = {
     phaseBackward: "Backward elimination",
     pivotGoal: col => `Choose the pivot in column ${col}`,
     pivotPrompt: "Which row operation is most convenient here?",
-    pivotExplanation: (label, value) => `At the next pivot position we want a simple non-zero entry. ${label} moves ${value} into this position.`,
-    pivotWrong: (row, col, label) => `The key issue is the pivot position in row ${row}, column ${col}. The best next step puts a simple non-zero entry there; ${label} does this directly.`,
+    pivotExplanation: (label, value) => `The current pivot position contains 0. A row with a non-zero entry therefore has to be moved into this position. ${label} moves ${value} there.`,
+    pivotWrong: (row, col, label) => `The pivot position in row ${row}, column ${col} contains 0. A row swap is needed only for that reason; ${label} moves a non-zero entry into this position.`,
     normalizeGoal: col => `Normalize the pivot in column ${col} to 1`,
     normalizePrompt: "Which step creates a 1 at the pivot position?",
     normalizeExplanation: (pivot, factor) => `The current pivot is ${pivot}. Multiplying the row by its reciprocal ${factor} makes the pivot exactly 1.`,
@@ -403,10 +403,14 @@ function createStrategy() {
 function choosePivotRow(target, row, col) {
   const current = target[row][col];
 
-  // Eine vorhandene ±1 bleibt stehen: kein unnötiger Zeilentausch.
-  if (current.isOne() || current.isMinusOne()) return row;
+  // Didaktische Regel: Zeilen werden nur dann getauscht, wenn die aktuelle
+  // Pivotposition 0 ist. Jeder von 0 verschiedene Pivot bleibt stehen; falls
+  // nötig, wird er im nächsten Schritt auf 1 normiert.
+  if (!current.isZero()) return row;
 
-  // Sonst bevorzugen wir eine +1, danach eine -1 in einer tieferen Zeile.
+  // Nur bei Pivot 0 suchen wir darunter nach einer geeigneten Zeile.
+  // Falls möglich, bevorzugen wir ±1; sonst den betragsmäßig einfachsten
+  // von 0 verschiedenen Eintrag.
   for (let r = row + 1; r < ROWS; r += 1) {
     if (target[r][col].isOne()) return r;
   }
@@ -414,10 +418,6 @@ function choosePivotRow(target, row, col) {
     if (target[r][col].isMinusOne()) return r;
   }
 
-  // Ist der aktuelle Eintrag bereits ungleich 0, vermeiden wir einen unnötigen Tausch.
-  if (!current.isZero()) return row;
-
-  // Andernfalls nehmen wir die betragsmäßig einfachste verfügbare Zeile.
   const candidates = [];
   for (let r = row + 1; r < ROWS; r += 1) {
     if (!target[r][col].isZero()) candidates.push(r);
