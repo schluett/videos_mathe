@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>9. Quiz · Gaussian Elimination</title>
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">All learning resources</a>
+      ·
+      <a href="../index.html">Matrix Algebra</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Language:</span><a lang="de" href="../../../matrixrechnung/9_quiz_gaussverfahren/index.html">Deutsch</a><span class="is-current" lang="en">English</span></div>
+  </div>
+</header>
+<div class="quiz-kicker">9. Quiz</div>
+<main class="module-shell">
+    <div class="module-heading">
+      <span class="module-category">Matrix Algebra</span>
+      <h1>Gaussian Elimination</h1>
+    </div>
+
+    <section class="lab-card gauss-quiz" aria-label="Quiz on Gaussian elimination">
+      <div class="gauss-quiz-toolbar">
+        <div class="gauss-view-switch" role="group" aria-label="Choose representation">
+          <button type="button" class="view-button is-selected" id="equationViewButton">Linear system</button>
+          <button type="button" class="view-button" id="matrixViewButton">Matrix form</button>
+        </div>
+        <div class="gauss-toolbar-actions">
+          <button type="button" class="gauss-back-button" id="backButton" disabled>Back</button>
+          <button type="button" class="gauss-reset-button" id="restartButton">Restart</button>
+        </div>
+      </div>
+
+      <div class="gauss-quiz-status" id="statusLine" aria-live="polite"></div>
+      <div class="gauss-quiz-stage" id="gaussStage" aria-live="polite"></div>
+    </section>
+  </main>
+<main>
+  
+  <div class="pager">
+    <a href="../6_transpose/index.html">← 6. Video · The Transpose</a>
+    <span></span>
+  </div>
+</main>
+<footer>Sebastian Schlütter · Hochschule Mainz</footer>
+<script src="app.js"></script>
+</body>
+</html>
