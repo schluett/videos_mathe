@@ -1367,6 +1367,28 @@ button:active {
   color: #6f461a;
 }
 
+.gauss-correct-box {
+  padding: 14px 16px;
+  border: 1px solid #9ac7a4;
+  border-radius: 8px;
+  background: #eef8f0;
+  color: #245b31;
+  line-height: 1.52;
+}
+
+.gauss-correct-heading {
+  margin: 0;
+}
+
+.gauss-correct-operations {
+  margin-top: 8px;
+  font-family: "Cambria Math", Georgia, serif;
+}
+
+.gauss-correct-operation + .gauss-correct-operation {
+  margin-top: 4px;
+}
+
 .gauss-message.is-error {
   border: 1px solid #dfb2ad;
   background: #fdf0ef;
@@ -1547,5 +1569,105 @@ button:active {
     align-items: flex-start;
     flex-direction: column;
     gap: 4px;
+  }
+}
+
+/* Vollständige, kopierbare Rechnungen im Bestätigungsblock (Variante C) */
+.gauss-correct-operations {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.gauss-calc-operation + .gauss-calc-operation {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #cfe3d3;
+}
+
+.gauss-correct-operation {
+  font-weight: 700;
+  margin-bottom: 8px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.gauss-calc-line {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.gauss-calc-prefix {
+  text-align: center;
+  font-weight: 700;
+}
+
+.gauss-calc-tuple {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: stretch;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 2px 0 5px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.gauss-calc-paren {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  font-size: 1.35em;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gauss-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(max-content, 1fr)) minmax(max-content, 1fr);
+  align-items: center;
+  min-width: max-content;
+}
+
+.gauss-calc-cell {
+  display: block;
+  min-width: 86px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  text-align: center;
+  color: #193f23;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+
+.gauss-calc-cell.is-rhs {
+  border-left: 2px solid #7da88a;
+}
+
+.gauss-calc-tuple.is-result .gauss-calc-cell {
+  font-weight: 700;
+}
+
+.gauss-calc-swap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 8px;
+  align-items: center;
+}
+
+.gauss-calc-row-label {
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (max-width: 720px) {
+  .gauss-calc-cell {
+    min-width: 72px;
+    padding-left: 9px;
+    padding-right: 9px;
   }
 }

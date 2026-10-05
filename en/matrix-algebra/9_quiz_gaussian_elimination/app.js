@@ -41,6 +41,7 @@ const I18N = {
     statusInput: "Eingabe",
     statusStep: n => `Schritt ${n}`,
     statusHint: "Hinweis",
+    statusCorrect: "Richtig",
     statusResult: "Ergebnis",
     inputTitle: "Lineares Gleichungssystem eingeben",
     inputIntro: "Voreingetragen ist das Gleichungssystem aus dem Lernvideo zu Gleichungssystemen und der Matrixinverse. Sie können die Werte ändern. Ganze Zahlen, Dezimalzahlen und Brüche wie 1/2 sind möglich.",
@@ -52,6 +53,7 @@ const I18N = {
     possibleSteps: "Mögliche nächste Schritte",
     feedbackHeading: "Der gewählte Schritt ist hier nicht der günstigste.",
     betterNextStep: "Günstiger nächster Schritt:",
+    correctStep: "Richtiger Schritt:",
     uniqueSolution: "Eindeutige Lösung",
     identityHeading: "Die linke Seite ist die Einheitsmatrix.",
     identityText: "Damit kann die Lösung direkt aus der rechten Spalte abgelesen werden.",
@@ -90,6 +92,7 @@ const I18N = {
     statusInput: "Input",
     statusStep: n => `Step ${n}`,
     statusHint: "Hint",
+    statusCorrect: "Correct",
     statusResult: "Result",
     inputTitle: "Enter a linear system",
     inputIntro: "The system from the learning video on linear systems and the inverse matrix is pre-filled. You can change the values. Integers, decimals and fractions such as 1/2 are accepted.",
@@ -101,6 +104,7 @@ const I18N = {
     possibleSteps: "Possible next steps",
     feedbackHeading: "The selected step is not the most convenient one here.",
     betterNextStep: "Better next step:",
+    correctStep: "Correct step:",
     uniqueSolution: "Unique solution",
     identityHeading: "The left-hand side is the identity matrix.",
     identityText: "The solution can therefore be read directly from the right-hand column.",
@@ -357,8 +361,9 @@ function returnToInput() {
 function goBack() {
   if (screen === "input") return;
 
-  // Aus einem Hinweis geht es zunächst zur unveränderten Auswahl zurück.
-  if (screen === "feedback") {
+  // Aus einem Hinweis oder aus der Bestätigung eines richtigen Schritts
+  // geht es zunächst zur unveränderten Auswahl zurück.
+  if (screen === "feedback" || screen === "correct") {
     feedbackOption = null;
     screen = "quiz";
     render();
@@ -638,9 +643,16 @@ function operationSignature(operations) {
   }).join("|");
 }
 
-function formatCombinedOperations(operations) {
-  return operations.map(operation => {
-    if (operation.kind !== "add") return "";
+function formatOperation(operation) {
+  if (operation.kind === "swap") {
+    return `${ROMAN[operation.r1]} ↔ ${ROMAN[operation.r2]}`;
+  }
+
+  if (operation.kind === "scale") {
+    return `${ROMAN[operation.row]} ← ${operation.factor.toString()} · ${ROMAN[operation.row]}`;
+  }
+
+  if (operation.kind === "add") {
     const factor = operation.factor;
     const source = ROMAN[operation.source];
     const target = ROMAN[operation.target];
@@ -652,7 +664,13 @@ function formatCombinedOperations(operations) {
 
     // Zielzeile bewusst links: III ← 2 · II + III.
     return `${target} ← ${sourceTerm} + ${target}`;
-  }).join("; ");
+  }
+
+  return "";
+}
+
+function formatCombinedOperations(operations) {
+  return operations.map(formatOperation).filter(Boolean).join("; ");
 }
 
 function cellKey(row, col) {
@@ -703,13 +721,28 @@ function selectOption(index) {
     return;
   }
 
-  // Zustand vor dem Rechenschritt sichern, damit Zurück die Matrix und
-  // den Operationszähler exakt auf den vorherigen Stand setzt.
-  stateHistory.push(snapshotState());
+  // Ein richtiger Schritt wird zunächst bestätigt. Die Matrix bleibt bis
+  // zum Klick auf „Weiter/Continue“ unverändert.
+  screen = "correct";
+  render();
+}
 
-  applyOperations(matrix, option.operations);
-  operationCount += arithmeticCost(option.operations, currentPlan.pivotCol);
-  operationHistory.push(currentPlan.correctLabel);
+function confirmCorrectStep() {
+  if (screen !== "correct" || !currentPlan) return;
+
+  // Zustand vor dem Rechenschritt sichern. Beim späteren Zurückspringen soll
+  // wieder die Auswahl vor diesem Schritt erscheinen, nicht der Bestätigungsbildschirm.
+  const snapshot = snapshotState();
+  snapshot.screen = "quiz";
+  stateHistory.push(snapshot);
+
+  const operations = currentPlan.operations;
+  const pivotCol = currentPlan.pivotCol;
+  const label = currentPlan.correctLabel;
+
+  applyOperations(matrix, operations);
+  operationCount += arithmeticCost(operations, pivotCol);
+  operationHistory.push(label);
   stepNumber += 1;
   currentPlan = nextPlan();
 
@@ -795,6 +828,13 @@ function render() {
   if (screen === "feedback") {
     setStatus(`${T.statusStep(stepNumber + 1)} · ${T.statusHint}`);
     stage.innerHTML = renderFeedbackScreen();
+    bindStageEvents();
+    return;
+  }
+
+  if (screen === "correct") {
+    setStatus(`${T.statusStep(stepNumber + 1)} · ${T.statusCorrect}`);
+    stage.innerHTML = renderCorrectScreen();
     bindStageEvents();
     return;
   }
@@ -914,6 +954,121 @@ function renderFeedbackScreen() {
 
       <div class="gauss-action-row">
         <button type="button" class="gauss-primary-action" id="feedbackContinueButton">${escapeHTML(T.continue)}</button>
+      </div>
+    </div>`;
+}
+
+function formatCalculationValue(value) {
+  const text = value.toString();
+  return text.startsWith("−") ? `(${text})` : text;
+}
+
+function renderCalculationTuple(cells, result = false) {
+  return `
+    <div class="gauss-calc-tuple${result ? " is-result" : ""}">
+      <span class="gauss-calc-paren" aria-hidden="true">(</span>
+      <div class="gauss-calc-grid">
+        ${cells.map((cell, col) => `
+          <span class="gauss-calc-cell${col === COLS - 1 ? " is-rhs" : ""}">${escapeHTML(cell)}</span>
+        `).join("")}
+      </div>
+      <span class="gauss-calc-paren" aria-hidden="true">)</span>
+    </div>`;
+}
+
+function renderOperationCalculation(operation, workingMatrix) {
+  const label = formatOperation(operation);
+
+  if (operation.kind === "swap") {
+    const firstBefore = workingMatrix[operation.r1].map(value => value.toString());
+    const secondBefore = workingMatrix[operation.r2].map(value => value.toString());
+    applyOperations(workingMatrix, [operation]);
+    const firstAfter = workingMatrix[operation.r1].map(value => value.toString());
+    const secondAfter = workingMatrix[operation.r2].map(value => value.toString());
+
+    return `
+      <div class="gauss-calc-operation">
+        <div class="gauss-correct-operation">${escapeHTML(label)}</div>
+        <div class="gauss-calc-swap">
+          <div class="gauss-calc-row-label">${escapeHTML(ROMAN[operation.r1])}:</div>
+          ${renderCalculationTuple(firstBefore)}
+          <div class="gauss-calc-row-label">→</div>
+          ${renderCalculationTuple(firstAfter, true)}
+          <div class="gauss-calc-row-label">${escapeHTML(ROMAN[operation.r2])}:</div>
+          ${renderCalculationTuple(secondBefore)}
+          <div class="gauss-calc-row-label">→</div>
+          ${renderCalculationTuple(secondAfter, true)}
+        </div>
+      </div>`;
+  }
+
+  let expressions;
+  let resultRow;
+
+  if (operation.kind === "scale") {
+    const before = workingMatrix[operation.row].slice();
+    expressions = before.map(value =>
+      `(${operation.factor.toString()})·${formatCalculationValue(value)}`
+    );
+    applyOperations(workingMatrix, [operation]);
+    resultRow = workingMatrix[operation.row].map(value => value.toString());
+  } else {
+    const sourceBefore = workingMatrix[operation.source].slice();
+    const targetBefore = workingMatrix[operation.target].slice();
+    expressions = targetBefore.map((targetValue, col) =>
+      `(${operation.factor.toString()})·${formatCalculationValue(sourceBefore[col])} + ${formatCalculationValue(targetValue)}`
+    );
+    applyOperations(workingMatrix, [operation]);
+    resultRow = workingMatrix[operation.target].map(value => value.toString());
+  }
+
+  return `
+    <div class="gauss-calc-operation">
+      <div class="gauss-correct-operation">${escapeHTML(label)}</div>
+      <div class="gauss-calc-line">
+        <span class="gauss-calc-prefix" aria-hidden="true"></span>
+        ${renderCalculationTuple(expressions)}
+      </div>
+      <div class="gauss-calc-line">
+        <span class="gauss-calc-prefix" aria-hidden="true">=</span>
+        ${renderCalculationTuple(resultRow, true)}
+      </div>
+    </div>`;
+}
+
+function renderCorrectCalculations() {
+  const workingMatrix = cloneMatrix(matrix);
+  return currentPlan.operations
+    .map(operation => renderOperationCalculation(operation, workingMatrix))
+    .join("");
+}
+
+function renderCorrectScreen() {
+  const highlights = {
+    pivotCells: [currentPlan.pivotCell],
+    targetCells: currentPlan.targetCells
+  };
+
+  const calculations = renderCorrectCalculations();
+
+  return `
+    <div class="gauss-screen">
+      <div class="gauss-screen-head">
+        <span class="gauss-goal-label is-success">${escapeHTML(T.statusCorrect)}</span>
+        <h2>${escapeHTML(currentPlan.goal)}</h2>
+      </div>
+
+      <div class="gauss-display-card">
+        ${renderCurrentSystem(highlights)}
+      </div>
+
+      <div class="gauss-correct-box">
+        <p class="gauss-correct-heading"><strong>${escapeHTML(T.correctStep)}</strong></p>
+        <div class="gauss-correct-operations">${calculations}</div>
+      </div>
+
+      <div class="gauss-action-row">
+        <button type="button" class="gauss-primary-action" id="correctContinueButton">${escapeHTML(T.continue)}</button>
       </div>
     </div>`;
 }
@@ -1069,6 +1224,9 @@ function bindStageEvents() {
 
   const feedbackContinue = document.getElementById("feedbackContinueButton");
   if (feedbackContinue) feedbackContinue.addEventListener("click", closeFeedback);
+
+  const correctContinue = document.getElementById("correctContinueButton");
+  if (correctContinue) correctContinue.addEventListener("click", confirmCorrectStep);
 }
 
 equationViewButton.addEventListener("click", () => {
