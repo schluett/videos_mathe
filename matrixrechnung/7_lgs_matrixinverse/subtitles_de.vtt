@@ -1,0 +1,305 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:12.050
+Wir haben für verschiedene Anwendungen Matrix-Vektor-Produkte kennengelernt. In diesem Video betrachten wir ein Beispiel, in dem das Ergebnis der Rechnung gegeben ist und der Vektor gesucht. Dabei lernen wir zwei neue Begriffe kennen: das lineare Gleichungssystem und die inverse Matrix.
+
+2
+00:00:13.750 --> 00:00:20.130
+Die Lernziele des Videos sind:
+
+3
+00:00:20.580 --> 00:00:28.160
+Erstens: eine betriebswirtschaftliche Fragestellung als lineares Gleichungssystem aufschreiben.
+
+4
+00:00:28.560 --> 00:00:33.017
+Zweitens: die inverse Matrix und die Einheitsmatrix kennenlernen.
+
+5
+00:00:33.417 --> 00:00:40.348
+Und drittens: ein Gleichungssystem mit der inversen Matrix lösen, von Hand und mit dem Computer.
+
+6
+00:00:42.148 --> 00:00:57.544
+Wir kehren dafür zur Eismanufaktur zurück. Die Bedarfsmatrix A hat in den Zeilen die Rohstoffe Milch, Früchte und Schokolade und in den Spalten die Produkte Softeis, Eisbecher und Sorbet.
+
+7
+00:00:58.144 --> 00:01:06.569
+Der Vektor x enthielt die geplanten Chargen je Sorte. Das Produkt A · x ergab den gesamten Rohstoffbedarf b.
+
+8
+00:01:07.169 --> 00:01:17.772
+Für den Plan aus zehn, sechs und vier Chargen waren das siebzig Liter Milch, sechsundvierzig Kilogramm Früchte und achtunddreißig Tafeln Schokolade.
+
+9
+00:01:20.472 --> 00:01:27.543
+Jetzt drehen wir die Frage um. Im Lager liegt ein Vorrat, der vor dem Wochenende vollständig verarbeitet werden soll.
+
+10
+00:01:28.093 --> 00:01:34.793
+Vorhanden sind zweiundsechzig Liter Milch, vierundvierzig Kilogramm Früchte und vierunddreißig Tafeln Schokolade. Diesen Vorrat schreiben wir wieder in den Vektor b.
+
+11
+00:01:35.443 --> 00:01:44.403
+Gesucht ist diesmal der Produktionsplan. Die gesuchten Größen stehen also mitten in der Rechnung. Was macht man, wenn mitten in einem Ansatz Zahlen unbekannt sind? Man setzt Buchstaben für die Unbekannten ein.
+
+12
+00:01:45.003 --> 00:01:48.278
+Wir schreiben also: x eins Chargen Softeis, x zwei Chargen Eisbecher, x drei Chargen Sorbet.
+
+13
+00:01:48.928 --> 00:01:58.678
+Die Beziehung ist dieselbe wie vorher: A · x ist gleich b. Nur ist jetzt b bekannt und x unbekannt.
+
+14
+00:01:59.278 --> 00:02:06.676
+Wie kommen wir an x heran?
+
+15
+00:02:09.176 --> 00:02:21.106
+Sehen wir uns zuerst an, was hinter A · x gleich b steckt. Wir kippen den Vektor x dafür über die Zeilen der Matrix, so wie wir es zum Ausrechnen eines Matrix-Vektor-Produkts gelernt haben.
+
+16
+00:02:21.656 --> 00:02:26.603
+Die Gleichung muss für jeden Eintrag des Ergebnisses gelten, also in jeder Zeile einzeln.
+
+17
+00:02:27.203 --> 00:02:37.140
+Der oberste Eintrag gehört zur Milch. Er entspricht der Gleichung: vier x eins plus fünf x zwei plus null x drei gleich zweiundsechzig.
+
+18
+00:02:37.740 --> 00:02:45.577
+Die zweite Zeile gehört zu den Früchten: x eins plus zwei x zwei plus sechs x drei gleich vierundvierzig.
+
+19
+00:02:46.177 --> 00:02:55.446
+Und die dritte Zeile zur Schokolade: zwei x eins plus drei x zwei plus null x drei gleich vierunddreißig.
+
+20
+00:02:56.046 --> 00:03:05.631
+Die Terme mit null lassen wir weg. Gesucht sind Werte für x eins, x zwei und x drei, die alle drei Gleichungen gleichzeitig erfüllen.
+
+21
+00:03:06.281 --> 00:03:12.221
+Mehrere lineare Gleichungen mit mehreren Unbekannten nennt man ein lineares Gleichungssystem.
+
+22
+00:03:12.921 --> 00:03:24.657
+Zum Lösen gibt es verschiedene Verfahren. Für uns sind zwei wichtig: das Gauß-Verfahren, das wir separat behandeln, und die Lösung mit der inversen Matrix. Um die geht es jetzt.
+
+23
+00:03:27.357 --> 00:03:42.427
+Wäre A eine gewöhnliche Zahl, wäre die Sache einfach. Nehmen wir vier mal x gleich zweiundsechzig. Wir multiplizieren beide Seiten mit der Inversen von vier; die multiplikative Inverse von vier ist ein Viertel.
+
+24
+00:03:42.977 --> 00:03:52.377
+Links steht dann ein Viertel mal vier mal x. Ein Viertel ist die Inverse von vier, weil das Produkt eins ergibt – und die Eins können wir weglassen.
+
+25
+00:03:52.977 --> 00:03:59.637
+Damit steht die Lösung unmittelbar da: x ist ein Viertel mal zweiundsechzig, also fünfzehn Komma fünf.
+
+26
+00:04:00.287 --> 00:04:18.037
+So ähnlich geht es bei Matrizen auch, auch wenn wir durch eine Matrix nicht teilen können. Die Inverse ist hier selbst eine Matrix; wir schreiben sie A hoch minus eins. Damit können wir schon einmal festhalten: A hoch minus eins mal A mal x gleich A hoch minus eins mal b.
+
+27
+00:04:20.687 --> 00:04:28.102
+Dieses Hilfsmittel A hoch minus eins, die Matrixinverse von A, schauen wir uns jetzt genauer an.
+
+28
+00:04:29.902 --> 00:04:50.584
+A hoch minus eins ist so wie A auch eine drei kreuz drei Matrix. Ihre Einträge sind aber nicht einfach die Kehrwerte der Einträge von A. Tatsächlich ist es mit Stift und Papier aufwändig, A hoch minus eins zu bestimmen; wir schauen uns aber später an, wie das mit Tabellenkalkulationssoftware geht.
+
+29
+00:04:51.184 --> 00:05:02.249
+Weil alle Brüche den Nenner zwölf haben, können wir sie auch bequemer schreiben: ein Zwölftel mal eine Matrix aus ganzen Zahlen. Beide Schreibweisen meinen dasselbe.
+
+30
+00:05:03.949 --> 00:05:10.994
+Nicht jede Matrix besitzt überhaupt eine Inverse; woran man das erkennt, klären wir später mit dem Rangkriterium.
+
+31
+00:05:13.744 --> 00:05:22.202
+Die entscheidende Eigenschaft der Inversen erkennen wir, wenn wir das Matrixprodukt von A hoch minus eins und A ausrechnen.
+
+32
+00:05:22.752 --> 00:05:33.429
+Weil A hoch minus eins und A jeweils die Dimension drei kreuz drei haben, kann das Produkt berechnet werden und hat selbst auch die Dimension drei kreuz drei.
+
+33
+00:05:34.929 --> 00:05:45.776
+Wir rechnen die ersten Einträge ausführlich aus. Für den Eintrag eins, eins kippen wir die erste Spalte von A über die erste Zeile von A hoch minus eins.
+
+34
+00:05:47.326 --> 00:05:52.705
+Drei Halbe mal vier plus null mal eins minus fünf Halbe mal zwei.
+
+35
+00:05:54.155 --> 00:06:02.559
+Drei Halbe mal vier ergibt sechs, der mittlere Ausdruck fällt weg, und minus fünf Halbe mal zwei ist minus fünf.
+
+36
+00:06:04.009 --> 00:06:11.257
+Sechs minus fünf ergibt eins, und die schreiben wir in die erste Zeile und erste Spalte der Ergebnismatrix.
+
+37
+00:06:12.857 --> 00:06:16.869
+Nun die zweite Spalte von A über derselben Zeile.
+
+38
+00:06:18.419 --> 00:06:24.724
+Drei Halbe mal fünf ist siebeneinhalb, und minus fünf Halbe mal drei ist minus siebeneinhalb. Die Differenz ist null.
+
+39
+00:06:25.274 --> 00:06:32.360
+Diese Null tragen wir in die erste Zeile und zweite Spalte der Ergebnismatrix ein.
+
+40
+00:06:33.960 --> 00:06:43.166
+Wenn wir nun entsprechend alle weiteren Einträge ausrechnen, erkennen wir, dass das Produkt von A hoch minus eins und A eine besondere Struktur hat:
+
+41
+00:06:44.616 --> 00:06:48.836
+Auf der Diagonalen steht überall eine Eins und sonst überall eine Null.
+
+42
+00:06:50.336 --> 00:07:01.253
+Diese Matrix heißt Einheitsmatrix. Wir bezeichnen sie mit I, oder auch mit I drei, um zu betonen, dass es eine Einheitsmatrix mit drei Zeilen und drei Spalten ist.
+
+43
+00:07:02.853 --> 00:07:11.571
+In der anderen Reihenfolge gilt dasselbe: Auch A mal A hoch minus eins ergibt die Einheitsmatrix, auch wenn wir dies hier nicht ausführlich nachrechnen.
+
+44
+00:07:14.521 --> 00:07:21.812
+Damit können wir die Gleichung nach x auflösen. Ausgangspunkt ist A · x gleich b.
+
+45
+00:07:22.362 --> 00:07:32.233
+Wir multiplizieren beide Seiten von links mit A hoch minus eins. Solange wir auf beiden Seiten dasselbe tun, bleibt die Gleichung gültig.
+
+46
+00:07:32.883 --> 00:07:44.017
+Auf der linken Seite dürfen wir die Klammern frei setzen; das ist die Assoziativität. Wir fassen deshalb zuerst A hoch minus eins mal A zusammen.
+
+47
+00:07:44.667 --> 00:07:52.257
+Dieser Teil ist genau die Einheitsmatrix. Es bleibt: I mal x gleich A hoch minus eins mal b.
+
+48
+00:07:52.857 --> 00:08:01.636
+Die Einheitsmatrix verändert einen Vektor nicht. Kippen Sie x über die erste Zeile von I, dann bleibt nur der erste Eintrag übrig.
+
+49
+00:08:02.236 --> 00:08:10.935
+Über der zweiten Zeile bleibt der zweite Eintrag, über der dritten der dritte. Deshalb können wir bei I mal x das I einfach weglassen.
+
+50
+00:08:11.585 --> 00:08:16.826
+Damit haben wir die Lösungsformel: x ist gleich A hoch minus eins mal b.
+
+51
+00:08:19.826 --> 00:08:28.974
+Die hergeleitete Lösungsformel ist oft sehr praktisch, um ein lineares Gleichungssystem zu lösen. Wir probieren das nun an unserem Beispiel aus.
+
+52
+00:08:29.574 --> 00:08:44.530
+Oben steht die Lösungsformel. Darunter setzen wir für A hoch minus eins die konkreten Werte der Inversen ein, die wir gerade schon gesehen haben. b ist der Rohstoffvorrat, der aufgebraucht werden soll.
+
+53
+00:08:45.130 --> 00:09:00.597
+Was nun noch zu tun ist, um das Gleichungssystem zu lösen, ist das Matrix-Vektor-Produkt von A hoch minus eins und b. Von der Dimension her passt das zusammen: drei kreuz drei mal drei kreuz eins ergibt drei kreuz eins.
+
+54
+00:09:01.997 --> 00:09:09.728
+Wir rechnen den ersten Eintrag des Ergebnisses aus. Dazu kippen wir den Vorrat über die erste Zeile der Inversen.
+
+55
+00:09:11.278 --> 00:09:27.013
+Drei Halbe mal zweiundsechzig ist dreiundneunzig, der mittlere Term fällt weg, und minus fünf Halbe mal vierunddreißig ist minus fünfundachtzig. Dreiundneunzig minus fünfundachtzig ergibt acht.
+
+56
+00:09:29.663 --> 00:09:40.593
+Zweite Zeile: minus eins mal zweiundsechzig, das ist minus zweiundsechzig. Dazu zwei mal vierunddreißig, das sind achtundsechzig. Zusammen ergibt das sechs.
+
+57
+00:09:43.243 --> 00:09:51.161
+Dritte Zeile: ein Zwölftel mal zweiundsechzig, plus ein Sechstel mal vierundvierzig, minus ein Viertel mal vierunddreißig. Auf Zwölftel gebracht sind das zweiundsechzig Zwölftel plus achtundachtzig Zwölftel minus einhundertzwei Zwölftel.
+
+58
+00:09:51.711 --> 00:10:02.771
+Das ergibt achtundvierzig Zwölftel, also vier.
+
+59
+00:10:04.621 --> 00:10:11.922
+Der gesuchte Produktionsplan lautet also: acht Chargen Softeis, sechs Chargen Eisbecher und vier Chargen Sorbet.
+
+60
+00:10:14.622 --> 00:10:22.890
+Wir können ausprobieren, ob wir richtig gerechnet haben. Dazu setzen wir die Lösung für x in unseren Ansatz A · x gleich b ein.
+
+61
+00:10:24.440 --> 00:10:30.724
+Für die Milch: vier mal acht plus fünf mal sechs plus null mal vier sind zweiundsechzig Liter.
+
+62
+00:10:31.324 --> 00:10:39.639
+Auch bei den Früchten und bei der Schokolade geht die Rechnung genau auf. Der Rohstoffvorrat ist vollständig verarbeitet.
+
+63
+00:10:42.389 --> 00:10:54.360
+Wir kommen nun zu der Frage, warum der Ansatz mit der Inversen in der Praxis so nützlich ist. Es steht ja auch noch ein Teil aus, nämlich: Woher kommt eigentlich A hoch minus eins?
+
+64
+00:10:56.060 --> 00:11:02.467
+In der Praxis kann man ja eigentlich immer einen Computer nutzen, mit einer Tabellenkalkulationssoftware wie Excel. Dann lässt sich ein lineares Gleichungssystem in zwei Schritten lösen.
+
+65
+00:11:04.167 --> 00:11:18.127
+Zuerst tragen wir die Bedarfsmatrix A in einen Zellbereich ein, hier B2 bis D4, und den Vorrat b daneben in F2 bis F4.
+
+66
+00:11:18.777 --> 00:11:27.265
+Dann markieren wir einen leeren Bereich in der Größe drei kreuz drei und rufen die Funktion MINV auf, mit dem Bereich von A als Argument.
+
+67
+00:11:27.915 --> 00:11:36.495
+MINV ist ein Matrixbefehl. In manchen Programmen müssen Matrixbefehle mit Steuerung, Umschalt und Enter abgeschlossen werden.
+
+68
+00:11:37.145 --> 00:11:49.493
+Wenn wir diese Tastenkombination gedrückt haben, liefert uns das Programm die inverse Matrix zu A, also A hoch minus eins. Das Programm zeigt sie als Dezimalzahlen an; es sind dieselben Werte wie eben.
+
+69
+00:11:51.193 --> 00:12:08.047
+Im zweiten Schritt markieren wir einen Bereich mit drei Zeilen und einer Spalte und multiplizieren mit der Funktion MMULT die Inverse mit dem Vorrat. Das ist genau der Lösungsansatz von vorhin: x gleich A hoch minus eins mal b.
+
+70
+00:12:08.697 --> 00:12:18.087
+Als Ergebnis erscheinen acht, sechs und vier: unser Produktionsplan. Das sind genau die Werte, die wir vorhin von Hand ausgerechnet haben.
+
+71
+00:12:18.687 --> 00:12:23.476
+Beide Schritte lassen sich auch in einer einzigen Formel zusammenfassen.
+
+72
+00:12:24.076 --> 00:12:37.133
+Die Rechenarbeit nimmt uns der Computer ab. Die Modellierung müssen wir vorher selbst leisten: erkennen, dass A · x gleich b gilt, und den Vektor x durch A hoch minus eins mal b berechnen.
+
+73
+00:12:39.883 --> 00:12:53.374
+Fazit. In diesem Video haben wir uns einiges angeschaut. Wir haben gesehen, wie man ein Matrix-Vektor-Produkt als Umkehraufgabe löst, also wenn das Ergebnis gegeben ist und der Vektor gesucht.
+
+74
+00:12:55.074 --> 00:13:05.725
+Im Produktionsbeispiel heißt das: Ist der Vorrat gegeben und der Plan gesucht, wird aus der bekannten Beziehung A · x gleich b ein lineares Gleichungssystem.
+
+75
+00:13:07.525 --> 00:13:17.184
+Zum Lösen von linearen Gleichungssystemen sind vor allem zwei Verfahren wichtig: das Gauß-Verfahren und das Ausrechnen mit der Inversen.
+
+76
+00:13:18.984 --> 00:13:35.930
+Die Inverse existiert immer dann, wenn ein Gleichungssystem eindeutig lösbar ist. Dann kann sie mit dem Computer berechnet werden, und die Lösung des Gleichungssystems vereinfacht sich zu einem einzigen Matrix-Vektor-Produkt: x gleich A hoch minus eins mal b.

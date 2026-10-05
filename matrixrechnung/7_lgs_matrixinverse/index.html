@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrixrechnung in der BWL – Gleichungssysteme und die Matrixinverse</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">Alle Lernmaterialien</a>
+      ·
+      <a href="../index.html">Matrixrechnung</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Sprache:</span><span class="is-current" lang="de">Deutsch</span><a lang="en" href="../../en/matrix-algebra/7_linear_systems/index.html">English</a></div>
+  </div>
+  <h1>7. Video · Gleichungssysteme und die Matrixinverse</h1>
+  <p>Vom Rohstoffvorrat zum Produktionsplan</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/c6991042b6de4f3f91ed/?op=view">
+      <track kind="subtitles" src="subtitles_de.vtt" srclang="de" label="Deutsch"><track kind="chapters" src="chapters.vtt" srclang="de" label="Kapitel" default>
+      Ihr Browser unterstützt das Video-Element nicht.
+    </video>
+  </div>
+
+  <h2>Kapitel</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Bisher war der Plan gegeben</span></button><button class="chapter-button" type="button" data-start="80.472"><span class="chapter-time">01:20</span><span>Knappe Rohstoffe, gesuchter Plan</span></button><button class="chapter-button" type="button" data-start="129.176"><span class="chapter-time">02:09</span><span>Das lineare Gleichungssystem</span></button><button class="chapter-button" type="button" data-start="207.357"><span class="chapter-time">03:27</span><span>Vom Kehrwert zur Inversen</span></button><button class="chapter-button" type="button" data-start="260.687"><span class="chapter-time">04:21</span><span>Die Inverse unserer Bedarfsmatrix</span></button><button class="chapter-button" type="button" data-start="313.744"><span class="chapter-time">05:14</span><span>Die Einheitsmatrix</span></button><button class="chapter-button" type="button" data-start="434.521"><span class="chapter-time">07:15</span><span>Die Gleichung umstellen</span></button><button class="chapter-button" type="button" data-start="499.826"><span class="chapter-time">08:20</span><span>Der Produktionsplan</span></button><button class="chapter-button" type="button" data-start="614.622"><span class="chapter-time">10:15</span><span>Die Probe</span></button><button class="chapter-button" type="button" data-start="642.389"><span class="chapter-time">10:42</span><span>LGS im Tabellenkalkulationsprogramm</span></button><button class="chapter-button" type="button" data-start="759.883"><span class="chapter-time">12:40</span><span>Fazit</span></button></div>
+  <section class="license-box"><h2>Lizenz</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p><p><strong>Symbole:</strong> <a href="https://openmoji.org/">OpenMoji</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Black SVG icons recolored and scaled</p></section>
+
+  <div class="pager">
+    <a href="../6_transponierte/index.html">← 6. Video · Die Transponierte</a>
+    <a href="../8_gauss_verfahren/index.html">8. Video · Das Gauß-Verfahren →</a>
+  </div>
+</main>
+<footer>Matrixrechnung in der BWL – Gleichungssysteme und die Matrixinverse</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix Algebra in Business – Gaussian Elimination</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">All learning resources</a>
+      ·
+      <a href="../index.html">Matrix Algebra</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Language:</span><a lang="de" href="../../../matrixrechnung/8_gauss_verfahren/index.html">Deutsch</a><span class="is-current" lang="en">English</span></div>
+  </div>
+  <h1>8. Video · Gaussian Elimination</h1>
+  <p>Solving linear systems step by step</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/992d2ece45b3484aa789/?op=view">
+      <track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English"><track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters" default>
+      Your browser does not support the video element.
+    </video>
+  </div>
+
+  <h2>Chapters</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>The second route to a solution</span></button><button class="chapter-button" type="button" data-start="82.247"><span class="chapter-time">01:22</span><span>The permitted row operations</span></button><button class="chapter-button" type="button" data-start="139.947"><span class="chapter-time">02:20</span><span>The quiz at a glance</span></button><button class="chapter-button" type="button" data-start="219.438"><span class="chapter-time">03:39</span><span>The first step in the quiz</span></button><button class="chapter-button" type="button" data-start="292.207"><span class="chapter-time">04:52</span><span>Zeros below the pivot</span></button><button class="chapter-button" type="button" data-start="334.245"><span class="chapter-time">05:34</span><span>Down to echelon form</span></button><button class="chapter-button" type="button" data-start="420.520"><span class="chapter-time">07:01</span><span>To the identity matrix</span></button><button class="chapter-button" type="button" data-start="507.329"><span class="chapter-time">08:27</span><span>Summary</span></button></div>
+  <section class="license-box"><h2>License</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p></section>
+
+  <div class="pager">
+    <a href="../7_linear_systems/index.html">← 7. Video · Linear Systems and the Inverse Matrix</a>
+    <a href="../9_quiz_gaussian_elimination/index.html">9. Quiz · Gaussian Elimination →</a>
+  </div>
+</main>
+<footer>Matrix Algebra in Business – Gaussian Elimination</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:20.582
+Im letzten Video haben wir ein lineares Gleichungssystem mit der inversen Matrix gelöst. Der zweite wichtige Lösungsweg ist das Gauß-Verfahren. Dieses nutzen wir, wenn wir händisch das Gleichungssystem lösen müssen. Auf dem Gauß-Verfahren basieren auch die Algorithmen, die ansonsten die Computersoftware nutzt.
+
+2
+00:00:21.282 --> 00:00:31.126
+In diesem Video gehen wir das Gauß-Verfahren für das Beispiel aus dem letzten Video durch und schauen uns auch das bereitgestellte interaktive Quiz dazu an.
+
+3
+00:00:33.026 --> 00:00:35.454
+Die Lernziele des Videos sind:
+
+4
+00:00:35.904 --> 00:00:39.978
+Erstens: die drei erlaubten Zeilenumformungen kennen.
+
+5
+00:00:40.378 --> 00:00:45.060
+Zweitens: den Ablauf des Gauß-Verfahrens an einem Beispiel verstehen.
+
+6
+00:00:45.460 --> 00:01:01.130
+Und drittens: erkennen, welcher Schritt zielführend ist, und diesen durchführen können.
+
+7
+00:01:03.130 --> 00:01:08.866
+Die Idee: Wir formen das Gleichungssystem schrittweise um, ohne seine Lösung zu verändern, bis wir die Werte der Unbekannten direkt ablesen können.
+
+8
+00:01:09.466 --> 00:01:18.906
+Das hier vorgestellte Verfahren führt so weit, dass die Lösung am Ende einfach abgelesen werden kann. Man nennt diese Durchführung das Gauß-Jordan-Verfahren.
+
+9
+00:01:19.556 --> 00:01:26.183
+Wir schauen uns das Verfahren hier exemplarisch für drei Gleichungen mit drei Unbekannten an. Bei anderen Formaten läuft es grundsätzlich genauso, solange das Gleichungssystem eindeutig lösbar ist.
+
+10
+00:01:28.883 --> 00:01:36.690
+Ein Gleichungssystem darf man umformen, ohne dass sich seine Lösung ändert. Erlaubt sind genau drei Umformungen.
+
+11
+00:01:38.390 --> 00:01:46.619
+Erstens: zwei Gleichungen vertauschen. Das ändert nur die Reihenfolge, an den Gleichungen selbst ändert sich nichts.
+
+12
+00:01:48.269 --> 00:01:59.744
+Zweitens: eine Gleichung mit einer Zahl ungleich null multiplizieren. Beide Seiten werden dabei mit derselben Zahl malgenommen, die Gleichung bleibt also gültig.
+
+13
+00:02:01.394 --> 00:02:13.893
+Und drittens: zu einer Gleichung das Vielfache einer anderen Gleichung addieren. Auch das ist erlaubt, denn auf beiden Seiten des Gleichheitszeichens kommt derselbe Wert hinzu.
+
+14
+00:02:15.943 --> 00:02:31.179
+Das Ziel ist eine besonders einfache Form: Am Ende soll in jeder Zeile nur noch eine Unbekannte stehen. Links steht dann die Einheitsmatrix, und rechts steht die Lösung. Dafür räumen wir das System Spalte für Spalte auf.
+
+15
+00:02:33.929 --> 00:02:47.770
+So sieht das interaktive Quiz aus. Auf dem ersten Bildschirm tragen Sie das Gleichungssystem ein: drei Gleichungen mit drei Unbekannten, als ganze Zahlen, Dezimalzahlen oder Brüche.
+
+16
+00:02:48.420 --> 00:02:56.406
+Voreingetragen ist das Beispiel aus dem Video zu den linearen Gleichungssystemen und der Matrixinverse. Damit rechnen wir gleich weiter.
+
+17
+00:02:58.906 --> 00:03:10.458
+Mit dem Umschalter oben links wechseln wir zur Matrixform. Es sind dieselben Zahlen, jetzt in der erweiterten Matrix: links die Koeffizienten, rechts neben dem Strich die rechte Seite.
+
+18
+00:03:11.158 --> 00:03:23.396
+Zwischen beiden Ansichten können Sie jederzeit hin und her wechseln, auch mitten in der Rechnung. Wir bleiben jetzt bei der Matrixform, weil die Umformungen dort besonders gut zu sehen sind.
+
+19
+00:03:25.696 --> 00:03:40.764
+In der Statuszeile stehen links der Schritt und die Phase. Rechts zählt das Quiz die Rechenoperationen mit: jede Multiplikation und jede Addition. Die Zahl läuft nur zur Information mit; wir gehen im Folgenden nicht weiter darauf ein.
+
+20
+00:03:41.464 --> 00:03:47.949
+Mit Zurück gehen Sie einen Schritt zurück, mit Neu starten beginnt die Aufgabe von vorn. Rechnen wir los.
+
+21
+00:03:51.099 --> 00:04:06.929
+Das Quiz nennt oben das aktuelle Ziel: In der ersten Spalte soll das Pivot auf eins normiert werden. Darunter stehen drei mögliche Umformungen, von denen eine die günstigste ist. Wählt man eine andere, erscheint ein Hinweis mit Erklärung.
+
+22
+00:04:07.529 --> 00:04:23.549
+Das Pivot ist die Zahl, mit der wir in einer Spalte arbeiten. Ist die Matrix A invertierbar, sind das genau die Elemente auf der Diagonalen. Und wie bei einer Diagonalmatrix wollen wir dort am Ende überall eine Eins stehen haben.
+
+23
+00:04:24.149 --> 00:04:29.125
+Links oben steht eine Vier. Multiplizieren wir die ganze erste Zeile mit einem Viertel, wird daraus die gewünschte Eins.
+
+24
+00:04:31.625 --> 00:04:37.451
+Nach der Wahl zeigt das Quiz den Schritt erst einmal vollständig durchgerechnet, bevor es ihn ausführt.
+
+25
+00:04:39.451 --> 00:04:57.365
+Hier sieht man gut, worauf es ankommt: Das eine Viertel wird nicht nur auf das Pivot angewendet, sondern auf jeden Eintrag der Zeile, auch auf die rechts davon. Aus vier wird eins, aus fünf fünf Viertel, aus null null, und aus zweiundsechzig einunddreißig Halbe.
+
+26
+00:05:01.365 --> 00:05:13.530
+Oben links steht jetzt die Eins. Das nächste Ziel: Unter dem Pivot sollen Nullen stehen, so wie in der Einheitsmatrix. Dort stehen noch eine Eins und eine Zwei.
+
+27
+00:05:14.130 --> 00:05:23.750
+Wir ziehen die erste Zeile von der zweiten ab und das Doppelte der ersten Zeile von der dritten. Das Quiz erledigt beides in einem Schritt.
+
+28
+00:05:27.650 --> 00:05:43.449
+Auch hier läuft die Rechnung über die ganze Zeile. In der zweiten Zeile wird aus eins null, aus zwei drei Viertel, aus sechs bleibt sechs, und aus vierundvierzig wird siebenundfünfzig Halbe. In der dritten Zeile geht es genauso.
+
+29
+00:05:48.149 --> 00:05:58.916
+Weiter mit der zweiten Spalte. Dort steht in der zweiten Zeile drei Viertel. Multiplizieren wir die Zeile mit dem Kehrwert, also mit vier Dritteln, wird daraus die Eins.
+
+30
+00:06:01.416 --> 00:06:06.699
+In der zweiten Zeile stehen jetzt null, eins, acht und achtunddreißig.
+
+31
+00:06:09.049 --> 00:06:18.048
+Unter diesem Pivot steht ein Halb. Wir addieren das minus ein Halbfache der zweiten Zeile zur dritten; damit wird der Eintrag null.
+
+32
+00:06:20.548 --> 00:06:25.838
+In der dritten Zeile steht nun minus vier mal x drei gleich minus sechzehn.
+
+33
+00:06:28.188 --> 00:06:38.394
+Auch das dritte Pivot soll eine Eins sein. Dort steht minus vier, also multiplizieren wir diese Zeile mit minus einem Viertel.
+
+34
+00:06:40.894 --> 00:06:50.255
+Damit ist die erste Hälfte geschafft. Unterhalb der Diagonalen stehen nur noch Nullen, und in der dritten Zeile steht bereits x drei gleich vier.
+
+35
+00:06:53.005 --> 00:07:06.654
+Schauen wir uns das kurz als Gleichungssystem an; dafür schalten wir die Ansicht einmal um. Die dritte Gleichung sagt direkt x drei gleich vier, in der zweiten stehen nur noch x zwei und x drei.
+
+36
+00:07:07.354 --> 00:07:18.188
+Das Gauß-Jordan-Verfahren räumt aber weiter auf, bis in jeder Zeile nur noch eine Unbekannte steht. Dafür gehen wir zurück zur Matrixform.
+
+37
+00:07:21.538 --> 00:07:36.861
+Die Statuszeile wechselt jetzt zur Rückwärtselimination: Wir räumen oberhalb der Diagonalen auf. In der dritten Spalte steht über dem Pivot eine Acht. Wir addieren das minus Achtfache der dritten Zeile zur zweiten.
+
+38
+00:07:40.761 --> 00:07:54.665
+Noch einmal die vollständige Rechnung: Vorne bleibt alles null und eins, in der dritten Spalte wird aus acht null, und rechts wird aus achtunddreißig die Sechs. Die rechte Seite rechnet also immer mit.
+
+39
+00:07:58.665 --> 00:08:08.553
+Bleibt die zweite Spalte. In der ersten Zeile stehen dort fünf Viertel, also addieren wir das minus fünf Viertelfache der zweiten Zeile zur ersten.
+
+40
+00:08:11.953 --> 00:08:23.155
+Links steht nun die Einheitsmatrix. Damit lässt sich die Lösung direkt ablesen: x eins gleich acht, x zwei gleich sechs, x drei gleich vier.
+
+41
+00:08:23.855 --> 00:08:36.689
+Das Quiz meldet eine eindeutige Lösung und zeigt sie darunter noch einmal an. Es ist genau der Produktionsplan aus dem letzten Video: acht Chargen Softeis, sechs Chargen Eisbecher und vier Chargen Sorbet.
+
+42
+00:08:39.239 --> 00:08:49.418
+Die Probe haben wir im letzten Video schon gerechnet: Setzt man acht, sechs und vier in die ursprünglichen Gleichungen ein, geht jede von ihnen auf.
+
+43
+00:08:52.218 --> 00:08:56.652
+Fazit. Drei Dinge sind aus diesem Video mitzunehmen.
+
+44
+00:08:58.352 --> 00:09:11.654
+Ein Gleichungssystem lässt sich durch drei Zeilenumformungen vereinfachen, ohne dass sich die Lösung ändert: Zeilen tauschen, mit einer Zahl multiplizieren und das Vielfache einer Zeile addieren.
+
+45
+00:09:13.454 --> 00:09:22.598
+Das Gauß-Verfahren räumt damit Spalte für Spalte auf, bis links die Einheitsmatrix steht. Dann steht rechts die Lösung.
+
+46
+00:09:24.398 --> 00:09:39.384
+Entscheidend ist dabei, in jedem Schritt zu erkennen, welche Umformung zielführend ist. Genau das können Sie im interaktiven Quiz üben: erst das Pivot auf eins bringen, dann darunter und später darüber Nullen erzeugen.

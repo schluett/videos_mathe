@@ -1,0 +1,305 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:18.158
+We have met matrix-vector products in several applications. In this video we look at an example where the result of the calculation is given and the vector is the unknown. Along the way we meet two new terms: the linear system and the inverse matrix.
+
+2
+00:00:20.158 --> 00:00:22.863
+The learning goals of this video are:
+
+3
+00:00:24.513 --> 00:00:28.470
+First: to write a business question as a linear system.
+
+4
+00:00:30.120 --> 00:00:34.411
+Second: to get to know the inverse matrix and the identity matrix.
+
+5
+00:00:36.061 --> 00:00:42.055
+And third: to solve a linear system with the inverse matrix, by hand and with a computer.
+
+6
+00:00:44.105 --> 00:00:57.360
+For that we return to the ice cream workshop. The requirements matrix A has the raw materials milk, fruit and chocolate in its rows, and the products soft serve, sundae and sorbet in its columns.
+
+7
+00:00:58.010 --> 00:01:06.298
+The vector x held the planned batches of each kind. The product A · x gave the total raw material requirement b.
+
+8
+00:01:06.948 --> 00:01:16.020
+For the plan of ten, six and four batches that was seventy litres of milk, forty-six kilograms of fruit and thirty-eight bars of chocolate.
+
+9
+00:01:18.970 --> 00:01:26.240
+Now we turn the question around. There is a stock in the store room that is to be used up completely before the weekend.
+
+10
+00:01:26.840 --> 00:01:33.401
+We have sixty-two litres of milk, forty-four kilograms of fruit and thirty-four bars of chocolate. We write this stock into the vector b again.
+
+11
+00:01:34.101 --> 00:01:44.781
+This time it is the production plan that we are looking for. So the quantities we want sit in the middle of the calculation. What do you do when numbers in the middle of a setup are unknown? You put letters in place of the unknowns.
+
+12
+00:01:45.431 --> 00:01:51.264
+So we write: x one batches of soft serve, x two batches of sundae, x three batches of sorbet.
+
+13
+00:01:51.964 --> 00:01:59.742
+The relation is the same as before: A · x equals b. Only now b is known and x is unknown.
+
+14
+00:02:00.392 --> 00:02:08.472
+How do we get at x?
+
+15
+00:02:11.222 --> 00:02:23.331
+Let us first look at what is behind A · x equals b. For that we tip the vector x over the rows of the matrix, just as we learnt to do when computing a matrix-vector product.
+
+16
+00:02:23.931 --> 00:02:29.075
+The equation has to hold for every entry of the result, so in each row separately.
+
+17
+00:02:29.725 --> 00:02:41.786
+The top entry belongs to the milk. It corresponds to the equation: four x one plus five x two plus zero x three equals sixty-two.
+
+18
+00:02:42.436 --> 00:02:50.162
+The second row belongs to the fruit: x one plus two x two plus six x three equals forty-four.
+
+19
+00:02:50.812 --> 00:02:59.537
+And the third row to the chocolate: two x one plus three x two plus zero x three equals thirty-four.
+
+20
+00:03:00.187 --> 00:03:09.703
+We leave out the terms with zero. We are looking for values for x one, x two and x three that satisfy all three equations at the same time.
+
+21
+00:03:10.403 --> 00:03:15.330
+Several linear equations with several unknowns are called a linear system.
+
+22
+00:03:16.080 --> 00:03:28.292
+There are different methods for solving one. Two of them matter for us: Gaussian elimination, which we treat separately, and the solution with the inverse matrix. That is the one we turn to now.
+
+23
+00:03:31.242 --> 00:03:45.221
+If A were an ordinary number, the whole thing would be easy. Take four times x equals sixty-two. We multiply both sides by the inverse of four; the multiplicative inverse of four is one quarter.
+
+24
+00:03:45.821 --> 00:03:57.203
+On the left we then have one quarter times four times x. One quarter is the inverse of four because the product is one – and the one we can leave out.
+
+25
+00:03:57.853 --> 00:04:04.334
+So the solution is there immediately: x is one quarter times sixty-two, that is fifteen point five.
+
+26
+00:04:05.034 --> 00:04:22.922
+Something similar works for matrices, even though we cannot divide by a matrix. Here the inverse is itself a matrix; we write it A inverse. So we can already record this much: A inverse times A times x equals A inverse times b.
+
+27
+00:04:25.822 --> 00:04:31.761
+Let us take a closer look at this tool A inverse, the inverse matrix of A.
+
+28
+00:04:33.711 --> 00:04:50.835
+A inverse, like A itself, is a three by three matrix. But its entries are not simply the reciprocals of the entries of A. In fact A inverse is laborious to work out with pen and paper; we will look later at how to do it with spreadsheet software.
+
+29
+00:04:51.485 --> 00:05:05.093
+Because all the fractions have twelve as their denominator, we can also write them more conveniently: one twelfth times a matrix of whole numbers. Both ways of writing it mean the same thing.
+
+30
+00:05:06.943 --> 00:05:14.465
+Not every matrix has an inverse at all; how you can tell is something we will clarify later, with the rank criterion.
+
+31
+00:05:17.465 --> 00:05:24.233
+We see the decisive property of the inverse when we work out the matrix product of A inverse and A.
+
+32
+00:05:24.833 --> 00:05:34.875
+Because A inverse and A each have the dimension three by three, the product can be computed, and it has the dimension three by three itself.
+
+33
+00:05:36.525 --> 00:05:45.561
+Let us work out the first entries in full. For the entry one, one we tip the first column of A over the first row of A inverse.
+
+34
+00:05:47.261 --> 00:05:54.568
+Three halves times four, plus zero times one, minus five halves times two.
+
+35
+00:05:56.168 --> 00:06:03.522
+Three halves times four gives six, the middle term drops out, and minus five halves times two is minus five.
+
+36
+00:06:05.122 --> 00:06:12.181
+Six minus five gives one, and we write that into the first row and first column of the result matrix.
+
+37
+00:06:13.931 --> 00:06:17.276
+Now the second column of A over the same row.
+
+38
+00:06:18.976 --> 00:06:28.542
+Three halves times five is seven point five, and minus five halves times three is minus seven point five. The difference is zero.
+
+39
+00:06:29.142 --> 00:06:33.677
+We enter this zero in the first row and second column of the result matrix.
+
+40
+00:06:35.427 --> 00:06:43.103
+If we now work out all the remaining entries in the same way, we see that the product of A inverse and A has a special structure:
+
+41
+00:06:44.703 --> 00:06:49.111
+There is a one everywhere on the diagonal, and a zero everywhere else.
+
+42
+00:06:50.761 --> 00:07:00.775
+This matrix is called the identity matrix. We write it I, or also I three, to emphasise that it is an identity matrix with three rows and three columns.
+
+43
+00:07:02.525 --> 00:07:10.465
+The other way round the same holds: A times A inverse also gives the identity matrix, even though we are not working that out in full here.
+
+44
+00:07:13.665 --> 00:07:21.045
+Now we can solve the equation for x. The starting point is A · x equals b.
+
+45
+00:07:21.645 --> 00:07:30.059
+We multiply both sides from the left by A inverse. As long as we do the same thing on both sides, the equation stays valid.
+
+46
+00:07:30.759 --> 00:07:40.061
+On the left-hand side we may place the brackets freely; that is associativity. So we first group A inverse times A together.
+
+47
+00:07:40.761 --> 00:07:49.297
+This part is exactly the identity matrix. What is left is: I times x equals A inverse times b.
+
+48
+00:07:49.947 --> 00:07:57.613
+The identity matrix does not change a vector. Tip x over the first row of I, and only the first entry is left.
+
+49
+00:07:58.263 --> 00:08:07.902
+Over the second row the second entry is left, over the third the third. That is why we can simply drop the I in I times x.
+
+50
+00:08:08.602 --> 00:08:14.167
+So we have the solution formula: x equals A inverse times b.
+
+51
+00:08:17.417 --> 00:08:24.964
+The solution formula we have derived is often very practical for solving a linear system. Let us try it out on our example.
+
+52
+00:08:25.614 --> 00:08:37.095
+At the top is the solution formula. Below it we substitute the concrete values of the inverse that we have just seen. And b is the raw material stock that is to be used up.
+
+53
+00:08:37.745 --> 00:08:50.757
+What is left to do, in order to solve the system, is the matrix-vector product of A inverse and b. The dimensions fit together: three by three times three by one gives three by one.
+
+54
+00:08:52.307 --> 00:08:59.039
+We work out the first entry of the result. For that we tip the stock vector over the first row of the inverse.
+
+55
+00:09:00.739 --> 00:09:13.919
+Three halves times sixty-two is ninety-three, the middle term drops out, and minus five halves times thirty-four is minus eighty-five. Ninety-three minus eighty-five gives eight.
+
+56
+00:09:16.719 --> 00:09:26.509
+Second row: minus one times sixty-two, that is minus sixty-two. Plus two times thirty-four, that is sixty-eight. Together that gives six.
+
+57
+00:09:29.309 --> 00:09:35.869
+Third row: one twelfth times sixty-two, plus one sixth times forty-four, minus one quarter times thirty-four. Brought onto twelfths, that is sixty-two twelfths plus eighty-eight twelfths minus one hundred and two twelfths.
+
+58
+00:09:36.469 --> 00:09:44.830
+That gives forty-eight twelfths, so four.
+
+59
+00:09:46.830 --> 00:09:54.099
+So the production plan we were looking for is: eight batches of soft serve, six batches of sundae and four batches of sorbet.
+
+60
+00:09:57.049 --> 00:10:05.784
+We can try out whether we have calculated correctly. For that we substitute the solution for x into our setup A · x equals b.
+
+61
+00:10:07.484 --> 00:10:14.536
+For the milk: four times eight, plus five times six, plus zero times four is sixty-two litres.
+
+62
+00:10:15.186 --> 00:10:24.238
+For the fruit and for the chocolate the calculation works out exactly as well. The raw material stock is used up completely.
+
+63
+00:10:27.238 --> 00:10:38.928
+We now come to the question of why the approach with the inverse is so useful in practice. There is also one part still outstanding, namely: where does A inverse actually come from?
+
+64
+00:10:40.778 --> 00:10:46.217
+In practice you can really always use a computer, with spreadsheet software such as Excel. Then a linear system can be solved in two steps.
+
+65
+00:10:48.067 --> 00:11:00.978
+First we enter the requirements matrix A into a range of cells, here B2 to D4, and the stock b next to it in F2 to F4.
+
+66
+00:11:01.678 --> 00:11:08.830
+Then we select an empty range of size three by three and call the function MINVERSE, with the range of A as its argument.
+
+67
+00:11:09.530 --> 00:11:16.773
+MINVERSE is an array function. In some programs array functions have to be confirmed with Control, Shift and Enter.
+
+68
+00:11:17.473 --> 00:11:29.403
+Once we have pressed that key combination, the program gives us the inverse matrix of A, that is A inverse. It shows it as decimal numbers; these are the same values as before.
+
+69
+00:11:31.253 --> 00:11:39.493
+In the second step we select a range with three rows and one column and use the function MMULT to multiply the inverse by the stock. That is exactly the solution approach from before: x equals A inverse times b.
+
+70
+00:11:40.193 --> 00:11:45.549
+The result is eight, six and four: our production plan. These are exactly the values we worked out by hand earlier.
+
+71
+00:11:46.199 --> 00:11:53.699
+Both steps can also be combined into a single formula.
+
+72
+00:11:54.349 --> 00:12:10.921
+The computer takes the arithmetic off our hands. We have to do the modelling ourselves beforehand: to recognise that A · x equals b holds, and to compute the vector x as A inverse times b.
+
+73
+00:12:13.921 --> 00:12:26.151
+In summary. In this video we have looked at quite a lot. We have seen how to solve a matrix-vector product as a reverse problem, that is, when the result is given and the vector is what we are looking for.
+
+74
+00:12:28.001 --> 00:12:37.901
+In the production example this means: if the stock is given and the plan is what we want, the familiar relation A · x equals b turns into a linear system.
+
+75
+00:12:39.851 --> 00:12:46.991
+For solving linear systems, two methods matter above all: Gaussian elimination and working it out with the inverse.
+
+76
+00:12:48.941 --> 00:13:02.768
+The inverse exists exactly when a linear system has a unique solution. Then it can be computed with a computer, and solving the system simplifies to a single matrix-vector product: x equals A inverse times b.

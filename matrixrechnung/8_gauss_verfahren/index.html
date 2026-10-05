@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrixrechnung in der BWL – Das Gauß-Verfahren</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">Alle Lernmaterialien</a>
+      ·
+      <a href="../index.html">Matrixrechnung</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Sprache:</span><span class="is-current" lang="de">Deutsch</span><a lang="en" href="../../en/matrix-algebra/8_gaussian_elimination/index.html">English</a></div>
+  </div>
+  <h1>8. Video · Das Gauß-Verfahren</h1>
+  <p>Gleichungssysteme Schritt für Schritt lösen</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/583644336d9a4aa1a4a7/?op=view">
+      <track kind="subtitles" src="subtitles_de.vtt" srclang="de" label="Deutsch"><track kind="chapters" src="chapters.vtt" srclang="de" label="Kapitel" default>
+      Ihr Browser unterstützt das Video-Element nicht.
+    </video>
+  </div>
+
+  <h2>Kapitel</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Der zweite Lösungsweg</span></button><button class="chapter-button" type="button" data-start="88.883"><span class="chapter-time">01:29</span><span>Die erlaubten Umformungen</span></button><button class="chapter-button" type="button" data-start="153.929"><span class="chapter-time">02:34</span><span>Das Quiz im Überblick</span></button><button class="chapter-button" type="button" data-start="231.099"><span class="chapter-time">03:51</span><span>Der erste Schritt im Quiz</span></button><button class="chapter-button" type="button" data-start="301.365"><span class="chapter-time">05:01</span><span>Nullen unter dem Pivot</span></button><button class="chapter-button" type="button" data-start="348.149"><span class="chapter-time">05:48</span><span>Bis zur Stufenform</span></button><button class="chapter-button" type="button" data-start="441.538"><span class="chapter-time">07:22</span><span>Bis zur Einheitsmatrix</span></button><button class="chapter-button" type="button" data-start="532.218"><span class="chapter-time">08:52</span><span>Fazit</span></button></div>
+  <section class="license-box"><h2>Lizenz</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p></section>
+
+  <div class="pager">
+    <a href="../7_lgs_matrixinverse/index.html">← 7. Video · Gleichungssysteme und die Matrixinverse</a>
+    <a href="../9_quiz_gaussverfahren/index.html">9. Quiz · Gaußverfahren →</a>
+  </div>
+</main>
+<footer>Matrixrechnung in der BWL – Das Gauß-Verfahren</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

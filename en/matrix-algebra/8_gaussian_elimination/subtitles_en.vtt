@@ -1,0 +1,185 @@
+WEBVTT
+
+1
+00:00:00.700 --> 00:00:17.653
+In the last video we solved a linear system with the inverse matrix. The second important route to a solution is Gaussian elimination. We use it whenever we have to solve a linear system by hand. Gaussian elimination is also what the algorithms used by computer software are based on.
+
+2
+00:00:18.453 --> 00:00:28.037
+In this video we work through Gaussian elimination for the example from the last video, and we also take a look at the interactive quiz that comes with it.
+
+3
+00:00:30.137 --> 00:00:32.297
+The learning goals of this video are:
+
+4
+00:00:32.797 --> 00:00:36.536
+First: to know the three permitted row operations.
+
+5
+00:00:36.986 --> 00:00:42.007
+Second: to understand how Gaussian elimination proceeds, using one example.
+
+6
+00:00:42.457 --> 00:00:56.393
+And third: to recognise which step leads to the goal, and to be able to carry it out.
+
+7
+00:00:58.543 --> 00:01:03.495
+We rewrite the linear system step by step, without changing its solution, until we can read off the values of the unknowns directly.
+
+8
+00:01:04.145 --> 00:01:12.065
+The method shown here goes far enough that the solution can simply be read off at the end. This way of carrying it out is called Gauss-Jordan elimination.
+
+9
+00:01:12.765 --> 00:01:19.397
+We look at the method here for three equations in three unknowns. For other formats it works in essentially the same way, as long as the linear system has exactly one solution.
+
+10
+00:01:22.247 --> 00:01:28.613
+A linear system may be rewritten without changing its solution. Exactly three operations are permitted.
+
+11
+00:01:30.463 --> 00:01:37.445
+First: swapping two equations. That only changes the order; the equations themselves stay the same.
+
+12
+00:01:39.245 --> 00:01:48.346
+Second: multiplying an equation by a number other than zero. Both sides are multiplied by the same number, so the equation remains valid.
+
+13
+00:01:50.146 --> 00:01:59.540
+And third: adding a multiple of one equation to another equation. That is allowed as well, because the same value is added on both sides of the equals sign.
+
+14
+00:02:01.740 --> 00:02:17.047
+The goal is a particularly simple form: in the end each row should contain only one unknown. On the left we then have the identity matrix, and on the right the solution. To get there we clear the system column by column.
+
+15
+00:02:19.947 --> 00:02:31.133
+This is what the interactive quiz looks like. On the first screen you enter the linear system: three equations in three unknowns, as integers, decimals or fractions.
+
+16
+00:02:31.833 --> 00:02:41.833
+The system that is already filled in is the example from the video on linear systems and the inverse matrix. That is the one we carry on with.
+
+17
+00:02:44.483 --> 00:02:57.145
+The switch at the top left takes us to the matrix form. These are the same numbers, now in the augmented matrix: the coefficients on the left, and to the right of the bar the right-hand side.
+
+18
+00:02:57.895 --> 00:03:10.453
+You can move back and forth between the two views at any time, even in the middle of the calculation. We stay with the matrix form from now on, because the row operations are especially easy to follow there.
+
+19
+00:03:12.903 --> 00:03:27.502
+In the status bar you see the step and the phase on the left. On the right the quiz counts the arithmetic operations: every multiplication and every addition. That number is there for information only; we will not come back to it.
+
+20
+00:03:28.252 --> 00:03:36.138
+Back takes you one step back, and Restart begins the task again from the start. Let us calculate.
+
+21
+00:03:39.438 --> 00:03:57.068
+At the top the quiz states the current goal: in the first column the pivot is to be normalized to one. Below it you see three possible row operations, one of which is the most convenient. If you pick a different one, a hint with an explanation appears.
+
+22
+00:03:57.718 --> 00:04:12.429
+The pivot is the number we work with in a column. If the matrix A is invertible, those are exactly the elements on the diagonal. And just as with a diagonal matrix, what we want there in the end is a one everywhere.
+
+23
+00:04:13.079 --> 00:04:20.803
+At the top left there is a four. If we multiply the whole first row by one quarter, it becomes the one we want.
+
+24
+00:04:23.453 --> 00:04:29.594
+Once you have chosen, the quiz first shows the step worked out in full, before it carries it out.
+
+25
+00:04:31.744 --> 00:04:47.957
+This shows nicely what matters here: the one quarter is applied not only to the pivot, but to every entry of the row, including the ones to the right of it. Four becomes one, five becomes five quarters, zero stays zero, and sixty-two becomes thirty-one halves.
+
+26
+00:04:52.207 --> 00:05:07.637
+At the top left there is now a one. The next goal: below the pivot there should be zeros, just as in the identity matrix. At the moment there is still a one and a two.
+
+27
+00:05:08.287 --> 00:05:13.787
+We subtract the first row from the second, and twice the first row from the third. The quiz does both in a single step.
+
+28
+00:05:17.937 --> 00:05:29.295
+Here too the calculation runs across the whole row. In the second row one becomes zero, two becomes three quarters, six stays six, and forty-four becomes fifty-seven halves. In the third row it works in just the same way.
+
+29
+00:05:34.245 --> 00:05:45.565
+On to the second column. In the second row that column contains three quarters. If we multiply that row by the reciprocal, that is by four thirds, it becomes a one.
+
+30
+00:05:48.215 --> 00:05:53.744
+The second row now reads zero, one, eight and thirty-eight.
+
+31
+00:05:56.244 --> 00:06:03.913
+Below this pivot there is one half. We add minus one half times the second row to the third; that makes the entry zero.
+
+32
+00:06:06.563 --> 00:06:11.431
+The third row now says minus four times x three equals minus sixteen.
+
+33
+00:06:13.931 --> 00:06:23.841
+The third pivot should be a one as well. It is minus four at the moment, so we multiply that row by minus one quarter.
+
+34
+00:06:26.491 --> 00:06:32.749
+That completes the first half. Below the diagonal there are only zeros left, and the third row already says x three equals four.
+
+35
+00:06:35.649 --> 00:06:47.929
+Let us look at this briefly as a linear system; for that we switch the view once. The third equation says directly that x three equals four, and the second one contains only x two and x three.
+
+36
+00:06:48.679 --> 00:06:57.020
+Gauss-Jordan elimination, however, keeps clearing until each row contains only one unknown. For that we go back to the matrix form.
+
+37
+00:07:00.520 --> 00:07:12.023
+The status bar now switches to backward elimination: we clear above the diagonal. In the third column there is an eight above the pivot. We add minus eight times the third row to the second.
+
+38
+00:07:16.173 --> 00:07:29.886
+Once more the full calculation: at the front everything stays zero and one, in the third column eight becomes zero, and on the right thirty-eight becomes six. So the right-hand side is always part of the calculation.
+
+39
+00:07:34.136 --> 00:07:43.648
+That leaves the second column. In the first row that column contains five quarters, so we add minus five quarters times the second row to the first.
+
+40
+00:07:47.198 --> 00:08:00.065
+On the left we now have the identity matrix. The solution can therefore be read off directly: x one equals eight, x two equals six, x three equals four.
+
+41
+00:08:00.815 --> 00:08:13.042
+The quiz reports a unique solution and shows it again below. It is exactly the production plan from the last video: eight batches of soft serve, six batches of sundae and four batches of sorbet.
+
+42
+00:08:15.742 --> 00:08:24.379
+We already did the check in the last video: if you substitute eight, six and four into the original equations, every one of them works out.
+
+43
+00:08:27.329 --> 00:08:31.408
+In summary, there are three things to take away from this video.
+
+44
+00:08:33.258 --> 00:08:44.118
+A linear system can be simplified by three row operations without changing its solution: swapping rows, multiplying a row by a number, and adding a multiple of one row.
+
+45
+00:08:46.068 --> 00:08:56.653
+Gaussian elimination uses these to clear the system column by column, until the identity matrix stands on the left. Then the solution stands on the right.
+
+46
+00:08:58.603 --> 00:09:13.434
+What matters is recognising at every step which operation leads to the goal. The interactive quiz lets you practise exactly that: first bring the pivot to one, then create zeros below it and later above it.
