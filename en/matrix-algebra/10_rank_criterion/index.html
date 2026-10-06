@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix Algebra in Business – Rank and the Rank Criterion</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">All learning resources</a>
+      ·
+      <a href="../index.html">Matrix Algebra</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Language:</span><a lang="de" href="../../../matrixrechnung/10_rang_rangkriterium/index.html">Deutsch</a><span class="is-current" lang="en">English</span></div>
+  </div>
+  <h1>10. Video · Rank and the Rank Criterion</h1>
+  <p>How many solutions does a linear system have?</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/425971a1175b4742b53e/?op=view">
+      <track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English"><track kind="chapters" src="chapters.vtt" srclang="en" label="Chapters" default>
+      Your browser does not support the video element.
+    </video>
+  </div>
+
+  <h2>Chapters</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Until now there was one solution</span></button><button class="chapter-button" type="button" data-start="32.192"><span class="chapter-time">00:32</span><span>Three cases are possible</span></button><button class="chapter-button" type="button" data-start="102.341"><span class="chapter-time">01:42</span><span>Linear independence</span></button><button class="chapter-button" type="button" data-start="196.957"><span class="chapter-time">03:17</span><span>The rank of a matrix</span></button><button class="chapter-button" type="button" data-start="238.993"><span class="chapter-time">03:59</span><span>Row echelon form</span></button><button class="chapter-button" type="button" data-start="324.375"><span class="chapter-time">05:24</span><span>Reading off the rank</span></button><button class="chapter-button" type="button" data-start="396.207"><span class="chapter-time">06:36</span><span>The augmented matrix</span></button><button class="chapter-button" type="button" data-start="443.897"><span class="chapter-time">07:24</span><span>The rank criterion</span></button><button class="chapter-button" type="button" data-start="497.756"><span class="chapter-time">08:18</span><span>When is a matrix invertible?</span></button><button class="chapter-button" type="button" data-start="535.701"><span class="chapter-time">08:56</span><span>Quiz and summary</span></button></div>
+  <section class="license-box"><h2>License</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p></section>
+
+  <div class="pager">
+    <a href="../9_quiz_gaussian_elimination/index.html">← 9. Quiz · Gaussian Elimination</a>
+    <a href="../11_quiz_rank/index.html">11. Quiz · Rank and Rank Criterion →</a>
+  </div>
+</main>
+<footer>Matrix Algebra in Business – Rank and the Rank Criterion</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

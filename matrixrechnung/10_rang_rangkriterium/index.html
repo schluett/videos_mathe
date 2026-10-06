@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrixrechnung in der BWL – Rang und Rangkriterium</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <nav>
+      <a href="../../index.html">Alle Lernmaterialien</a>
+      ·
+      <a href="../index.html">Matrixrechnung</a>
+    </nav>
+    <div class="lang-switch"><span class="lang-label">Sprache:</span><span class="is-current" lang="de">Deutsch</span><a lang="en" href="../../en/matrix-algebra/10_rank_criterion/index.html">English</a></div>
+  </div>
+  <h1>10. Video · Rang und Rangkriterium</h1>
+  <p>Wie viele Lösungen hat ein Gleichungssystem?</p>
+  <p class="muted">Sebastian Schlütter · Hochschule Mainz</p>
+</header>
+<main>
+  <div class="player-shell">
+    <video id="video-player" controls preload="metadata">
+      <source src="https://seafile.rlp.net/seafhttp/f/66a8433ff8b245b69a25/?op=view">
+      <track kind="subtitles" src="subtitles_de.vtt" srclang="de" label="Deutsch"><track kind="chapters" src="chapters.vtt" srclang="de" label="Kapitel" default>
+      Ihr Browser unterstützt das Video-Element nicht.
+    </video>
+  </div>
+
+  <h2>Kapitel</h2><div class="chapter-list"><button class="chapter-button" type="button" data-start="0.000"><span class="chapter-time">00:00</span><span>Bisher gab es immer genau eine Lösung</span></button><button class="chapter-button" type="button" data-start="32.048"><span class="chapter-time">00:32</span><span>Drei Fälle sind möglich</span></button><button class="chapter-button" type="button" data-start="110.170"><span class="chapter-time">01:50</span><span>Lineare Unabhängigkeit</span></button><button class="chapter-button" type="button" data-start="214.547"><span class="chapter-time">03:35</span><span>Der Rang einer Matrix</span></button><button class="chapter-button" type="button" data-start="260.586"><span class="chapter-time">04:21</span><span>Die Zeilenstufenform</span></button><button class="chapter-button" type="button" data-start="352.664"><span class="chapter-time">05:53</span><span>Den Rang ablesen</span></button><button class="chapter-button" type="button" data-start="432.381"><span class="chapter-time">07:12</span><span>Die erweiterte Matrix</span></button><button class="chapter-button" type="button" data-start="478.680"><span class="chapter-time">07:59</span><span>Das Rangkriterium</span></button><button class="chapter-button" type="button" data-start="539.860"><span class="chapter-time">09:00</span><span>Wann ist eine Matrix invertierbar?</span></button><button class="chapter-button" type="button" data-start="577.375"><span class="chapter-time">09:37</span><span>Quiz und Fazit</span></button></div>
+  <section class="license-box"><h2>Lizenz</h2><p><strong>Video:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · © Sebastian Schlütter</p></section>
+
+  <div class="pager">
+    <a href="../9_quiz_gaussverfahren/index.html">← 9. Quiz · Gaußverfahren</a>
+    <a href="../11_quiz_rang/index.html">11. Quiz · Rang und Rangkriterium →</a>
+  </div>
+</main>
+<footer>Matrixrechnung in der BWL – Rang und Rangkriterium</footer>
+
+<script>
+(() => {
+  const player = document.getElementById("video-player");
+  document.querySelectorAll(".chapter-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      player.currentTime = Number(button.dataset.start || 0);
+      player.play();
+      player.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
