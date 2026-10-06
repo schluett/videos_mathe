@@ -192,7 +192,7 @@ video {
 
 .quiz-kicker {
   width: min(980px, calc(100% - 32px));
-  margin: 10px auto -22px;
+  margin: 10px auto 0;
   color: var(--accent2);
   font-weight: 700;
   font-size: .95rem;
